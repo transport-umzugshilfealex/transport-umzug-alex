@@ -1,0 +1,209 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: transport-umzug-alex\n"
+"POT-Creation-Date: 2025-10-22 00:00+0000\n"
+"PO-Revision-Date: 2025-10-22 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# base.html
+msgid "Транспорт, помощь при переездах и логистика в Бремене и по всей Германии. Быстро, безопасно, надёжно."
+msgstr "Transport, moving help and logistics in Bremen and across Germany. Fast, safe, reliable."
+
+msgid "Услуги"
+msgstr "Services"
+
+msgid "Преимущества"
+msgstr "Advantages"
+
+msgid "Как работаем"
+msgstr "How it works"
+
+msgid "Цены"
+msgstr "Prices"
+
+msgid "Контакты"
+msgstr "Contacts"
+
+msgid "Язык"
+msgstr "Language"
+
+# index — hero
+msgid "Schnell, sicher, zuverlässig"
+msgstr "Fast, safe, reliable"
+
+msgid "Schnell, sicher, zuverlässig — и всегда рады помочь!"
+msgstr "Fast, safe, reliable — always happy to help!"
+
+msgid "Переезды, грузоперевозки до 3,5 т, курьерские и доставочные услуги. Погрузка-разгрузка, сборка мебели и вывоз ненужного. Работаем аккуратно, вовремя и по справедливой цене."
+msgstr "Moves, transport up to 3.5 t, courier and delivery. Loading/unloading, furniture assembly and disposal. Careful, on time and fairly priced."
+
+msgid "Заказать звонок"
+msgstr "Request a call"
+
+msgid "Подробнее об услугах"
+msgstr "See services"
+
+msgid "Безнал & Rechnung"
+msgstr "Cashless & invoice"
+
+msgid "Бережная упаковка"
+msgstr "Careful packing"
+
+msgid "Город / межгород"
+msgstr "Local / long-distance"
+
+msgid "С нами ваши вещи застрахованы"
+msgstr "Your belongings are insured with us"
+
+# Leistungen
+msgid "Перевозки, переезды, расчистка помещений, утилизация бытовых вещей, помощь с погрузкой и разгрузкой, курьерские услуги, помощь в сборке мебели — гибко и надёжно."
+msgstr "Transport, moving, house clearance, waste disposal, loading and unloading assistance, courier services, and furniture assembly — flexible and reliable."
+
+msgid "Переезды «под ключ»"
+msgstr "Turn-key moving"
+
+msgid "Квартирные и офисные переезды, расчистка помещений, утилизация бытовых вещей, планирование."
+msgstr "Apartment and office moves, house clearance, household disposal, planning."
+
+msgid "Грузоперевозки до 3,5 т"
+msgstr "Transport up to 3.5 t"
+
+msgid "Доставка техники, мебели и перевозка груза из точки А в точку Б — по всей Германии."
+msgstr "Delivery of appliances, furniture and Transport from A to B – nationwide."
+
+msgid "Помощь в сборке мебели"
+msgstr "Help in furniture assembly"
+
+msgid "При необходимости помощь в сборке и разборке мебели — аккуратно и надёжно."
+msgstr "Assistance with furniture assembly and disassembly if needed."
+
+msgid "Погрузка/разгрузка"
+msgstr "Loading / unloading"
+
+msgid "Опытные грузчики, бережное обращение с вашим имуществом."
+msgstr "Experienced movers, careful handling."
+
+msgid "Курьер и экспресс-доставка"
+msgstr "Courier & express"
+
+msgid "Срочные перевозки, гибкие временные окна."
+msgstr "Urgent deliveries, flexible time windows."
+
+msgid "Вывоз и утилизация"
+msgstr "Removal & disposal"
+
+msgid "Вывоз и профессиональная утилизация."
+msgstr "Removal and proper disposal."
+
+# Vorteile
+msgid "Почему выбирают нас"
+msgstr "Why choose us"
+
+msgid "Надёжность"
+msgstr "Reliability"
+
+msgid "Приезжаем вовремя..."
+msgstr "On time, careful, well insured."
+
+msgid "Прозрачные цены"
+msgstr "Transparent pricing"
+
+msgid "Почасовая ставка без скрытых платежей."
+msgstr "Hourly rates, no hidden fees."
+
+msgid "Команда-профи"
+msgstr "Pro team"
+
+msgid "Опыт и необходимое оборудование."
+msgstr "Experience and the right tools."
+
+# Ablauf
+msgid "Как это происходит"
+msgstr "How it works"
+
+msgid "Заявка"
+msgstr "Inquiry"
+
+msgid "Вы звоните или пишете — указываете адрес, объём, лифт/этаж, дату и пожелания. Также необходимо добавить список с описанием перевозимого груза."
+msgstr "You call or write – specify the address, volume, elevator/floor, date, and your preferences. Please also include a list describing the items to be transported."
+
+msgid "Смета и подтверждение"
+msgstr "Quote & confirmation"
+
+msgid "Предлагаем слот..."
+msgstr "We propose a time slot, price and team — clearly and in writing."
+
+msgid "Переезд"
+msgstr "Moving day"
+
+msgid "Приезжаем вовремя..."
+msgstr "We arrive on time, pack, load, drive, set up — as agreed."
+
+# Preise
+msgid "Ориентировочные тарифы"
+msgstr "Example rates"
+
+msgid "Ниже — примеры. Точный расчёт..."
+msgstr "Examples below — exact quote depends on volume and distance."
+
+msgid "Мини-переезд"
+msgstr "Small move"
+
+msgid "Фургон до 3,5 т + 1 грузчик"
+msgstr "Van up to 3.5 t + 1 movers"
+
+msgid "от 49–69 € / час"
+msgstr "from €49–69 / hour"
+
+msgid "Стандарт"
+msgstr "Standard"
+
+msgid "Фургон + 2-3 грузчика..."
+msgstr "Van + 2–3 movers, assembly"
+
+msgid "от 79–109 € / час"
+msgstr "from €79–109 / hour"
+
+msgid "Межгород"
+msgstr "Long-distance"
+
+msgid "Фикс по маршруту..."
+msgstr "Fixed price per route, night windows possible"
+
+msgid "по запросу"
+msgstr "on request"
+
+# Kontakt
+msgid "Связаться с нами"
+msgstr "Contact us"
+
+msgid "Имя"
+msgstr "Name"
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid "Сообщение"
+msgstr "Message"
+
+msgid "Отправить заявку"
+msgstr "Send request"
+
+msgid "Позвонить сейчас"
+msgstr "Call now"
+
+msgid "Контактная информация"
+msgstr "Contact info"
+
+msgid "Работаем: Пн–Сб, 8:00–20:00 (возможны ночные окна по договорённости)."
+msgstr "Mon–Sat, 8am–8pm (night windows by arrangement)."
+
+# privacy
+msgid "Мы храним только необходимую информацию, отправленную через форму, и не передаём её третьим лицам, если это не требуется законом."
+msgstr "We store only the data needed to process your request and do not share it with third parties unless required by law."

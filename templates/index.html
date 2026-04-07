@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}Transport & Umzugshilfe Alex — {{ _('Schnell, sicher, zuverlässig') }}{% endblock %}
+{% block content %}
+<section class="hero container" id="home">
+<span class="chip">Bremen und Umgebung — deutschlandweit</span>
+<h1>"Transport & Umzugshilfe Alex"<br/><span class="muted">{{ _('Schnell, sicher, zuverlässig — и всегда рады помочь!') }}</span></h1>
+<p class="sub">{{ _('Переезды, грузоперевозки до 3,5 т, курьерские и доставочные услуги. Погрузка-разгрузка, сборка мебели и вывоз ненужного. Работаем аккуратно, вовремя и по справедливой цене.') }}</p>
+<div class="cta-row">
+<a class="btn" href="#kontakt">{{ _('Заказать звонок') }}</a>
+<a class="btn-outline" href="#leistungen">{{ _('Подробнее об услугах') }}</a>
+</div>
+<div class="stats">
+<div class="stat">✔ {{ _('Безнал & Rechnung') }}</div>
+<div class="stat">✔ {{ _('Бережная упаковка') }}</div>
+<div class="stat">✔ {{ _('Город / межгород') }}</div>
+
+</div>
+<div class="insurance">🛡️ {{ _('С нами ваши вещи застрахованы') }}</div>
+
+
+</section>
+
+
+<section id="leistungen" class="container">
+<h2>{{ _('Услуги') }}</h2>
+<p class="muted" lang="de">{{ _('Перевозки, переезды, расчистка помещений, утилизация бытовых вещей, помощь с погрузкой и разгрузкой, курьерские услуги, помощь в сборке мебели — гибко и надёжно.') }}</p>
+<div class="cards">
+<article class="card"><div class="icon">🚛</div><h3>{{ _('Переезды «под ключ»') }}</h3><p class="muted">{{ _('Квартирные и офисные переезды, расчистка помещений, утилизация бытовых вещей, планирование.') }}</p></article>
+<article class="card"><div class="icon">📦</div><h3>{{ _('Грузоперевозки до 3,5 т') }}</h3><p class="muted">{{ _('Доставка техники, мебели и перевозка груза из точки А в точку Б — по всей Германии.') }}</p></article>
+<article class="card"><div class="icon">🛠️</div><h3>{{ _('Помощь в сборке мебели') }}</h3><p class="muted">{{ _('При необходимости помощь в сборке и разборке мебели — аккуратно и надёжно.') }}</p></article>
+<article class="card"><div class="icon">🤝</div><h3>{{ _('Погрузка/разгрузка') }}</h3><p class="muted">{{ _('Опытные грузчики, бережное обращение с вашим имуществом.') }}</p></article>
+<article class="card"><div class="icon">🚀</div><h3>{{ _('Курьер и экспресс-доставка') }}</h3><p class="muted">{{ _('Срочные перевозки, гибкие временные окна.') }}</p></article>
+<article class="card"><div class="icon">♻️</div><h3>{{ _('Вывоз и утилизация') }}</h3><p class="muted">{{ _('Вывоз и профессиональная утилизация.') }}</p></article>
+</div>
+</section>
+
+
+<section id="vorteile" class="container">
+<h2>{{ _('Почему выбирают нас') }}</h2>
+<div class="cards three">
+<article class="card"><h3>{{ _('Надёжность') }}</h3><p class="muted">{{ _('Приезжаем вовремя...') }}</p></article>
+<article class="card"><h3>{{ _('Прозрачные цены') }}</h3><p class="muted">{{ _('Почасовая ставка без скрытых платежей.') }}</p></article>
+<article class="card"><h3>{{ _('Команда-профи') }}</h3><p class="muted">{{ _('Опыт и необходимое оборудование.') }}</p></article>
+</div>
+</section>
+
+
+<section id="ablauf" class="container">
+<h2>{{ _('Как это происходит') }}</h2>
+<div class="steps card">
+<div class="step"><div class="badge">1</div><h3>{{ _('Заявка') }}</h3><p class="muted">{{ _('Вы звоните или пишете — указываете адрес, объём, лифт/этаж, дату и пожелания. Также необходимо добавить список с описанием перевозимого груза.') }}</p></div>
+<div class="step"><div class="badge">2</div><h3>{{ _('Смета и подтверждение') }}</h3><p class="muted">{{ _('Предлагаем слот...') }}</p></div>
+<div class="step"><div class="badge">3</div><h3>{{ _('Переезд') }}</h3><p class="muted">{{ _('Приезжаем вовремя...') }}</p></div>
+</div>
+</section>
+
+
+<section id="preise" class="container">
+<h2>{{ _('Ориентировочные тарифы') }}</h2>
+<p class="muted">{{ _('Ниже — примеры. Точный расчёт...') }}</p>
+<div class="cards three">
+<article class="card"><h3>{{ _('Мини-переезд') }}</h3><p class="muted">{{ _('Фургон до 3,5 т + 1 грузчик') }}</p><p><strong>{{ _('от 49–69 € / час') }}</strong></p></article>
+<article class="card"><h3>{{ _('Стандарт') }}</h3><p class="muted">{{ _('Фургон + 2-3 грузчика...') }}</p><p><strong>{{ _('от 79–109 € / час') }}</strong></p></article>
+<article class="card"><h3>{{ _('Межгород') }}</h3><p class="muted">{{ _('Фикс по маршруту...') }}</p><p><strong>{{ _('по запросу') }}</strong></p></article>
+</div>
+</section>
+
+
+<section id="kontakt" class="container split">
+<div>
+<h2>{{ _('Связаться с нами') }}</h2>
+<p class="muted">Bremen und Umgebung — deutschlandweit</p>
+<form id="contactForm" method="post" action="{{ url_for('contact') }}">
+<div class="twocol">
+<div><label for="name">{{ _('Имя') }}</label><input id="name" name="name" required></div>
+<div><label for="phone">{{ _('Телефон') }}</label><input id="phone" name="phone" required></div>
+</div>
+<div><label for="email">E‑mail</label><input id="email" name="email" type="email"></div>
+<div><label for="message">{{ _('Сообщение') }}</label><textarea id="message" name="message" rows="4"></textarea></div>
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+<div class="twocol">
+<button class="btn" type="submit">{{ _('Отправить заявку') }}</button>
+<a class="btn-outline" href="tel:[+491757412613]">{{ _('Позвонить сейчас') }}</a>
+</div>
+<div id="formStatus" class="muted" role="status" aria-live="polite"></div>
+</form>
+</div>
+<aside class="card">
+<h3>{{ _('Контактная информация') }}</h3>
+<p>📞 <strong>{{ _('Телефон') }}:</strong> <a href="tel:[+491757412613]">+49 (175) 7412613</a><br>
+✉️ <strong>E‑mail:</strong> <a href="mailto:[transport.umzugshilfealex@gmail.com]">transport.umzugshilfealex@gmail.com</a><br>
+🌐 <strong>Web:</strong> <a href="https://IhreDomain.de">IhreDomain.de</a></p>
+<p class="muted">{{ _('Работаем: Пн–Сб, 8:00–20:00 (возможны ночные окна по договорённости).') }}</p>
+<div id="map" class="map" aria-label="Karte: Bremen-Nord, Deutschland"></div>
+<noscript>
+  <div class="map-placeholder">
+    <div>
+      <strong>Bremen-Nord</strong>
+      <div class="muted">Deutschland</div>
+    </div>
+  </div>
+</noscript>
+
+</aside>
+</section>
+
+
+<div class="ribbon">{{ _('🚚 Schnell, sicher, zuverlässig – und immer gerne für Sie da!') }}</div>
+{% endblock %}

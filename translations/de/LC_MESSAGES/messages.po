@@ -1,0 +1,209 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: transport-umzug-alex\n"
+"POT-Creation-Date: 2025-10-22 00:00+0000\n"
+"PO-Revision-Date: 2025-10-22 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# base.html
+msgid "Транспорт, помощь при переездах и логистика в Бремене и по всей Германии. Быстро, безопасно, надёжно."
+msgstr "Transport, Umzugshilfe und Logistik in Bremen und deutschlandweit. Schnell, sicher, zuverlässig."
+
+msgid "Услуги"
+msgstr "Leistungen"
+
+msgid "Преимущества"
+msgstr "Vorteile"
+
+msgid "Как работаем"
+msgstr "Ablauf"
+
+msgid "Цены"
+msgstr "Preise"
+
+msgid "Контакты"
+msgstr "Kontakt"
+
+msgid "Язык"
+msgstr "Sprache"
+
+# index.html — hero
+msgid "Schnell, sicher, zuverlässig"
+msgstr "Schnell, sicher, zuverlässig"
+
+msgid "Schnell, sicher, zuverlässig — и всегда рады помочь!"
+msgstr "Schnell, sicher, zuverlässig – und immer gerne für Sie da!"
+
+msgid "Переезды, грузоперевозки до 3,5 т, курьерские и доставочные услуги. Погрузка-разгрузка, сборка мебели и вывоз ненужного. Работаем аккуратно, вовремя и по справедливой цене."
+msgstr "Umzüge, Transporte bis 3,5 t, Kurier- und Lieferdienste. Be- und Entladen, Möbelmontage und Entsorgung. Sorgfältig, pünktlich und fair im Preis."
+
+msgid "Заказать звонок"
+msgstr "Rückruf anfordern"
+
+msgid "Подробнее об услугах"
+msgstr "Mehr über Leistungen"
+
+msgid "Безнал & Rechnung"
+msgstr "Bargeldlos & Rechnung"
+
+msgid "Бережная упаковка"
+msgstr "Sorgfältige Verpackung"
+
+msgid "Город / межгород"
+msgstr "Stadt / Fernverkehr"
+
+msgid "С нами ваши вещи застрахованы"
+msgstr "Mit uns sind Ihre Sachen versichert"
+
+# index.html — Leistungen
+msgid "Перевозки, переезды, расчистка помещений, утилизация бытовых вещей, помощь с погрузкой и разгрузкой, курьерские услуги, помощь в сборке мебели — гибко и надёжно."
+msgstr "Transporte, Umzüge, Entrümpelung, Haushaltsentsorgung, Be- und Entladehilfe, Kurierdienste, Möbelmontage Hilfe – flexibel und zuverlässig."
+
+msgid "Переезды «под ключ»"
+msgstr "Umzüge „schlüsselfertig“"
+
+msgid "Квартирные и офисные переезды, расчистка помещений, утилизация бытовых вещей, планирование."
+msgstr "Wohnungs- und Büroumzüge, Entrümpelung, Haushaltsentsorgung , Planung."
+
+msgid "Грузоперевозки до 3,5 т"
+msgstr "Transporte bis 3,5 t"
+
+msgid "Доставка техники, мебели и перевозка груза из точки А в точку Б — по всей Германии."
+msgstr "Lieferung von Geräten, Möbeln und Transport von A nach B – deutschlandweit."
+
+msgid "Помощь в сборке мебели"
+msgstr "Möbelmontage Hilfe"
+
+msgid "При необходимости помощь в сборке и разборке мебели — аккуратно и надёжно."
+msgstr "Bei Bedarf Hilfe beim Auf- und Abbau von Möbeln, sauber und sicher."
+
+msgid "Погрузка/разгрузка"
+msgstr "Be- und Entladen"
+
+msgid "Опытные грузчики, бережное обращение с вашим имуществом."
+msgstr "Erfahrene Träger, sorgfältiger Umgang mit Ihrem Eigentum."
+
+msgid "Курьер и экспресс-доставка"
+msgstr "Kurier & Express"
+
+msgid "Срочные перевозки, гибкие временные окна."
+msgstr "Eilige Sendungen, flexible Zeitfenster."
+
+msgid "Вывоз и утилизация"
+msgstr "Entrümpelung & Entsorgung"
+
+msgid "Вывоз и профессиональная утилизация."
+msgstr "Abtransport und fachgerechte Entsorgung."
+
+# index — Vorteile
+msgid "Почему выбирают нас"
+msgstr "Warum wir"
+
+msgid "Надёжность"
+msgstr "Zuverlässigkeit"
+
+msgid "Приезжаем вовремя..."
+msgstr "Pünktlich, sorgfältig, gut abgesichert."
+
+msgid "Прозрачные цены"
+msgstr "Transparente Preise"
+
+msgid "Почасовая ставка без скрытых платежей."
+msgstr "Stundensätze ohne versteckte Kosten."
+
+msgid "Команда-профи"
+msgstr "Profi-Team"
+
+msgid "Опыт и необходимое оборудование."
+msgstr "Erfahrung und das richtige Equipment."
+
+# index — Ablauf
+msgid "Как это происходит"
+msgstr "So läuft es ab"
+
+msgid "Заявка"
+msgstr "Anfrage"
+
+msgid "Вы звоните или пишете — указываете адрес, объём, лифт/этаж, дату и пожелания. Также необходимо добавить список с описанием перевозимого груза."
+msgstr "Sie rufen an oder schreiben – geben Adresse, Volumen, Aufzug/Etage, Datum und Wünsche an. Außerdem fügen Sie bitte eine Liste mit der Beschreibung der transportierten Gegenstände hinzu."
+
+msgid "Смета и подтверждение"
+msgstr "Angebot & Bestätigung"
+
+msgid "Предлагаем слот..."
+msgstr "Wir schlagen Zeitfenster, Preis und Team vor – transparent und schriftlich."
+
+msgid "Переезд"
+msgstr "Umzug"
+
+msgid "Приезжаем вовремя..."
+msgstr "Pünktlich vor Ort, verpacken, laden, fahren, stellen auf – wie besprochen."
+
+# index — Preise
+msgid "Ориентировочные тарифы"
+msgstr "Beispielpreise"
+
+msgid "Ниже — примеры. Точный расчёт..."
+msgstr "Beispiele – genaue Kalkulation je Volumen und Distanz."
+
+msgid "Мини-переезд"
+msgstr "Kleinumzug"
+
+msgid "Фургон до 3,5 т + 1 грузчик"
+msgstr "Transporter bis 3,5 t + 1 Träger"
+
+msgid "от 49–69 € / час"
+msgstr "ab 49–69 € / Std"
+
+msgid "Стандарт"
+msgstr "Standard"
+
+msgid "Фургон + 2-3 грузчика..."
+msgstr "Transporter + 2–3 Träger, Möbelmontage"
+
+msgid "от 79–109 € / час"
+msgstr "ab 79–109 € / Std"
+
+msgid "Межгород"
+msgstr "Fernverkehr"
+
+msgid "Фикс по маршруту..."
+msgstr "Festpreis je Strecke, Nachtfenster möglich"
+
+msgid "по запросу"
+msgstr "auf Anfrage"
+
+# index — Kontakt
+msgid "Связаться с нами"
+msgstr "Kontakt"
+
+msgid "Имя"
+msgstr "Name"
+
+msgid "Телефон"
+msgstr "Telefon"
+
+msgid "Сообщение"
+msgstr "Nachricht"
+
+msgid "Отправить заявку"
+msgstr "Anfrage senden"
+
+msgid "Позвонить сейчас"
+msgstr "Jetzt anrufen"
+
+msgid "Контактная информация"
+msgstr "Kontaktinfo"
+
+msgid "Работаем: Пн–Сб, 8:00–20:00 (возможны ночные окна по договорённости)."
+msgstr "Mo–Sa, 8–20 Uhr (Nachtfenster nach Absprache)."
+
+# privacy.html
+msgid "Мы храним только необходимую информацию, отправленную через форму, и не передаём её третьим лицам, если это не требуется законом."
+msgstr "Wir speichern nur notwendige Formulardaten und geben sie nicht an Dritte weiter – außer gesetzlich erforderlich."

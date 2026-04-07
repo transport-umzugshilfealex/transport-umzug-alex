@@ -1,0 +1,10 @@
+Flask==3.0.3
+Flask-Babel==4.0.0
+Flask-WTF==1.2.1
+email-validator==2.2.0
+itsdangerous==2.2.0
+Werkzeug==3.0.3
+Babel==2.15.0
+# Безопасность (опционально):
+Flask-Limiter==3.8.0
+gunicorn==23.0.0
