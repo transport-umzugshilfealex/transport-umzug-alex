@@ -34,8 +34,11 @@ msgid "Язык"
 msgstr "Sprache"
 
 # index.html — hero
-msgid "Schnell, sicher, zuverlässig"
-msgstr "Schnell, sicher, zuverlässig"
+msgid "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig."
+msgstr "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig."
+
+msgid "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig — и всегда рады помочь."
+msgstr "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig – und immer gerne für Sie da."
 
 msgid "Schnell, sicher, zuverlässig — и всегда рады помочь!"
 msgstr "Schnell, sicher, zuverlässig – und immer gerne für Sie da!"
@@ -108,8 +111,8 @@ msgstr "Warum wir"
 msgid "Надёжность"
 msgstr "Zuverlässigkeit"
 
-msgid "Приезжаем вовремя..."
-msgstr "Pünktlich, sorgfältig, gut abgesichert."
+msgid "Приезжаем вовремя и аккуратно выполняем работу."
+msgstr "Wir kommen pünktlich und arbeiten sorgfältig."
 
 msgid "Прозрачные цены"
 msgstr "Transparente Preise"
@@ -142,8 +145,8 @@ msgstr "Wir schlagen Zeitfenster, Preis und Team vor – transparent und schrift
 msgid "Переезд"
 msgstr "Umzug"
 
-msgid "Приезжаем вовремя..."
-msgstr "Pünktlich vor Ort, verpacken, laden, fahren, stellen auf – wie besprochen."
+msgid "Приезжаем вовремя, упаковываем и перевозим вещи безопасно."
+msgstr "Wir kommen pünktlich, verpacken und transportieren Ihre Sachen sicher."
 
 # index — Preise
 msgid "Ориентировочные тарифы"
@@ -158,17 +161,17 @@ msgstr "Kleinumzug"
 msgid "Фургон до 3,5 т + 1 грузчик"
 msgstr "Transporter bis 3,5 t + 1 Träger"
 
-msgid "от 49–69 € / час"
-msgstr "ab 49–69 € / Std"
+msgid "60 € / час"
+msgstr "60 € / Std"
 
 msgid "Стандарт"
 msgstr "Standard"
 
-msgid "Фургон + 2-3 грузчика..."
-msgstr "Transporter + 2–3 Träger, Möbelmontage"
+msgid "Фургон + дополнительные грузчики, а также монтаж мебели по договорённости"
+msgstr "Transporter + zusätzliche Umzugshelfer sowie Möbelmontage nach Vereinbarung"
 
-msgid "от 79–109 € / час"
-msgstr "ab 79–109 € / Std"
+msgid "от 80–100 € / час"
+msgstr "ab 80–100 € / Std"
 
 msgid "Межгород"
 msgstr "Fernverkehr"

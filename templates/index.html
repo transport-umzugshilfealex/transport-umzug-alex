@@ -3,7 +3,12 @@
 {% block content %}
 <section class="hero container" id="home">
 <span class="chip">Bremen und Umgebung — deutschlandweit</span>
-<h1>"Transport & Umzugshilfe Alex"<br/><span class="muted">{{ _('Schnell, sicher, zuverlässig — и всегда рады помочь!') }}</span></h1>
+<h1>
+  {{ _('Transport & Umzugshilfe Alex') }}<br/>
+  <span class="muted">
+    {{ _('Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig — и всегда рады помочь.') }}
+  </span>
+</h1>
 <p class="sub">{{ _('Переезды, грузоперевозки до 3,5 т, курьерские и доставочные услуги. Погрузка-разгрузка, сборка мебели и вывоз ненужного. Работаем аккуратно, вовремя и по справедливой цене.') }}</p>
 <div class="cta-row">
 <a class="btn" href="#kontakt">{{ _('Заказать звонок') }}</a>
@@ -38,7 +43,7 @@
 <section id="vorteile" class="container">
 <h2>{{ _('Почему выбирают нас') }}</h2>
 <div class="cards three">
-<article class="card"><h3>{{ _('Надёжность') }}</h3><p class="muted">{{ _('Приезжаем вовремя...') }}</p></article>
+<article class="card"><h3>{{ _('Надёжность') }}</h3><p class="muted">{{ _('Приезжаем вовремя и аккуратно выполняем работу.') }}</p></article>
 <article class="card"><h3>{{ _('Прозрачные цены') }}</h3><p class="muted">{{ _('Почасовая ставка без скрытых платежей.') }}</p></article>
 <article class="card"><h3>{{ _('Команда-профи') }}</h3><p class="muted">{{ _('Опыт и необходимое оборудование.') }}</p></article>
 </div>
@@ -50,7 +55,7 @@
 <div class="steps card">
 <div class="step"><div class="badge">1</div><h3>{{ _('Заявка') }}</h3><p class="muted">{{ _('Вы звоните или пишете — указываете адрес, объём, лифт/этаж, дату и пожелания. Также необходимо добавить список с описанием перевозимого груза.') }}</p></div>
 <div class="step"><div class="badge">2</div><h3>{{ _('Смета и подтверждение') }}</h3><p class="muted">{{ _('Предлагаем слот...') }}</p></div>
-<div class="step"><div class="badge">3</div><h3>{{ _('Переезд') }}</h3><p class="muted">{{ _('Приезжаем вовремя...') }}</p></div>
+<div class="step"><div class="badge">3</div><h3>{{ _('Переезд') }}</h3><p class="muted">{{ _('Приезжаем вовремя, упаковываем и перевозим вещи безопасно.') }}</p></div>
 </div>
 </section>
 
@@ -59,8 +64,8 @@
 <h2>{{ _('Ориентировочные тарифы') }}</h2>
 <p class="muted">{{ _('Ниже — примеры. Точный расчёт...') }}</p>
 <div class="cards three">
-<article class="card"><h3>{{ _('Мини-переезд') }}</h3><p class="muted">{{ _('Фургон до 3,5 т + 1 грузчик') }}</p><p><strong>{{ _('от 49–69 € / час') }}</strong></p></article>
-<article class="card"><h3>{{ _('Стандарт') }}</h3><p class="muted">{{ _('Фургон + 2-3 грузчика...') }}</p><p><strong>{{ _('от 79–109 € / час') }}</strong></p></article>
+<article class="card"><h3>{{ _('Мини-переезд') }}</h3><p class="muted">{{ _('Фургон до 3,5 т + 1 грузчик') }}</p><p><strong>{{ _('60 € / час') }}</strong></p></article>
+<article class="card"><h3>{{ _('Стандарт') }}</h3><p class="muted">{{ _('Фургон + дополнительные грузчики, а также монтаж мебели по договорённости') }}</p><p><strong>{{ _('от 80–100 € / час') }}</strong></p></article>
 <article class="card"><h3>{{ _('Межгород') }}</h3><p class="muted">{{ _('Фикс по маршруту...') }}</p><p><strong>{{ _('по запросу') }}</strong></p></article>
 </div>
 </section>
@@ -87,7 +92,17 @@
 </div>
 <aside class="card">
 <h3>{{ _('Контактная информация') }}</h3>
-<p>📞 <strong>{{ _('Телефон') }}:</strong> <a href="tel:+491757412613">+49 (175) 7412613</a><br>
+<p>
+  <img src="{{ url_for('static', filename='img/whatsapp.png') }}"
+       alt="WhatsApp"
+       width="20"
+       height="20"
+       style="vertical-align: middle; margin-right: 6px;">
+
+  <strong>WhatsApp:</strong>
+  <a href="https://wa.me/491757412613" target="_blank">
+    +49 (175) 7412613
+  </a><br>
 ✉️ <strong>E‑mail:</strong> <a href="mailto:transport.umzugshilfealex@gmail.com">transport.umzugshilfealex@gmail.com</a><br>
 🌐 <strong>Web:</strong> <a href="https://IhreDomain.de">IhreDomain.de</a></p>
 <p class="muted">{{ _('Работаем: Пн–Сб, 8:00–20:00 (возможны ночные окна по договорённости).') }}</p>
@@ -105,5 +120,5 @@
 </section>
 
 
-<div class="ribbon">{{ _('🚚 Schnell, sicher, zuverlässig – und immer gerne für Sie da!') }}</div>
+<div class="ribbon">{{ _('Schnell, sicher, zuverlässig – und immer gerne für Sie da!') }}</div>
 {% endblock %}

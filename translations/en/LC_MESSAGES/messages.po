@@ -34,11 +34,11 @@ msgid "Язык"
 msgstr "Language"
 
 # index — hero
-msgid "Schnell, sicher, zuverlässig"
-msgstr "Fast, safe, reliable"
+msgid "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig."
+msgstr "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig."
 
-msgid "Schnell, sicher, zuverlässig — и всегда рады помочь!"
-msgstr "Fast, safe, reliable — always happy to help!"
+msgid "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig — и всегда рады помочь."
+msgstr "Clearing out, moving, furniture transport. Fast, safe, reliable — always happy to help!"
 
 msgid "Переезды, грузоперевозки до 3,5 т, курьерские и доставочные услуги. Погрузка-разгрузка, сборка мебели и вывоз ненужного. Работаем аккуратно, вовремя и по справедливой цене."
 msgstr "Moves, transport up to 3.5 t, courier and delivery. Loading/unloading, furniture assembly and disposal. Careful, on time and fairly priced."
@@ -158,17 +158,17 @@ msgstr "Small move"
 msgid "Фургон до 3,5 т + 1 грузчик"
 msgstr "Van up to 3.5 t + 1 movers"
 
-msgid "от 49–69 € / час"
-msgstr "from €49–69 / hour"
+msgid "60 € / час"
+msgstr "60 / hour"
 
 msgid "Стандарт"
 msgstr "Standard"
 
-msgid "Фургон + 2-3 грузчика..."
-msgstr "Van + 2–3 movers, assembly"
+msgid "Фургон + дополнительные грузчики, а также монтаж мебели по договорённости"
+msgstr "Van service with additional movers and furniture assembly available upon request"
 
-msgid "от 79–109 € / час"
-msgstr "from €79–109 / hour"
+msgid "от 80–100 € / час"
+msgstr "from €80–100 / hour"
 
 msgid "Межгород"
 msgstr "Long-distance"
