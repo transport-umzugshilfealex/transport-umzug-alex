@@ -73,10 +73,14 @@ def create_app() -> Flask:
     def set_security_headers(resp):
         csp = (
             "default-src 'self'; "
-            "img-src 'self' data: https://tile.openstreetmap.org; "
+            "img-src 'self' data: https://tile.openstreetmap.org "
+            "https://www.google-analytics.com https://www.googletagmanager.com; "
             "style-src 'self' 'unsafe-inline'; "
-            "script-src 'self'; "
-            "connect-src 'self'; "
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; "
+            "connect-src 'self' "
+            "https://*.google-analytics.com "
+            "https://*.analytics.google.com "
+            "https://www.googletagmanager.com; "
             "font-src 'self' data:; "
             "frame-ancestors 'none'; "
             "base-uri 'self'; "
