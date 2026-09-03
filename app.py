@@ -33,7 +33,7 @@ def create_app() -> Flask:
     app.config.from_object(AppConfig)
 
     # Запасные значения (если забыли в config.py)
-    app.config.setdefault("BABEL_DEFAULT_LOCALE", "ru")
+    app.config.setdefault("BABEL_DEFAULT_LOCALE", "de")
     app.config.setdefault("BABEL_TRANSLATION_DIRECTORIES", "translations")
 
     # ── Proxy (nginx), rate limit, CSRF
@@ -49,7 +49,8 @@ def create_app() -> Flask:
         if lang in app.config["LANGUAGES"]:
             session["lang"] = lang
             return lang
-        return request.accept_languages.best_match(app.config["LANGUAGES"]) or "ru"
+        # Первый визит всегда открывается на немецком независимо от языка браузера.
+        return app.config.get("BABEL_DEFAULT_LOCALE", "de")
 
     Babel(app, locale_selector=select_locale)
 
@@ -58,9 +59,9 @@ def create_app() -> Flask:
     def inject_globals():
         def locale_code():
             try:
-                return str(get_locale()) or "ru"
+                return str(get_locale()) or "de"
             except Exception:
-                return "ru"
+                return "de"
 
         return {
             "csrf_token": generate_csrf,

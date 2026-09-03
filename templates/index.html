@@ -2,7 +2,7 @@
 {% block title %}Transport & Umzugshilfe Alex — {{ _('Schnell, sicher, zuverlässig') }}{% endblock %}
 {% block content %}
 <section class="hero container" id="home">
-<span class="chip">Bremen und Umgebung — deutschlandweit</span>
+<span class="chip">Bremen und Umgebung — in ganz Deutschland</span>
 <h1>
   {{ _('Transport & Umzugshilfe Alex') }}<br/>
   <span class="muted">
@@ -74,7 +74,7 @@
 <section id="kontakt" class="container split">
 <div>
 <h2>{{ _('Связаться с нами') }}</h2>
-<p class="muted">Bremen und Umgebung — deutschlandweit</p>
+<p class="muted">Bremen und Umgebung — in ganz Deutschland</p>
 <form id="contactForm" method="post" action="{{ url_for('contact') }}">
 <div class="twocol">
 <div><label for="name">{{ _('Имя') }}</label><input id="name" name="name" required></div>
@@ -85,7 +85,7 @@
 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
 <div class="twocol">
 <button class="btn" type="submit">{{ _('Отправить заявку') }}</button>
-<a class="btn-outline" href="tel:[+491757412613]">{{ _('Позвонить сейчас') }}</a>
+<a class="btn-outline" href="tel:+491757412613">{{ _('Позвонить сейчас') }}</a>
 </div>
 <div id="formStatus" class="muted" role="status" aria-live="polite"></div>
 </form>

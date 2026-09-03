@@ -13,7 +13,7 @@ msgstr ""
 
 # base.html
 msgid "Транспорт, помощь при переездах и логистика в Бремене и по всей Германии. Быстро, безопасно, надёжно."
-msgstr "Transport, Umzugshilfe und Logistik in Bremen und deutschlandweit. Schnell, sicher, zuverlässig."
+msgstr "Transport, Umzugshilfe und Logistik in Bremen und in ganz Deutschland. Schnell, sicher, zuverlässig."
 
 msgid "Услуги"
 msgstr "Leistungen"
@@ -78,7 +78,7 @@ msgid "Грузоперевозки до 3,5 т"
 msgstr "Transporte bis 3,5 t"
 
 msgid "Доставка техники, мебели и перевозка груза из точки А в точку Б — по всей Германии."
-msgstr "Lieferung von Geräten, Möbeln und Transport von A nach B – deutschlandweit."
+msgstr "Lieferung von Geräten, Möbeln und Transport von A nach B – in ganz Deutschland."
 
 msgid "Помощь в сборке мебели"
 msgstr "Möbelmontage Hilfe"
