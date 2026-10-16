@@ -1,0 +1,153 @@
+<section id="rechner" class="container calculator-section" aria-labelledby="calculatorTitle">
+  <div class="calculator-heading">
+    <div>
+      <span class="calculator-eyebrow">{{ _('Ihr Umzug. Ihr Überblick.') }}</span>
+      <h2 id="calculatorTitle">{{ _('Was kostet Ihr Umzug?') }}</h2>
+      <p class="muted">{{ _('In drei Schritten zu einer ersten Preisorientierung. Kostenlos und unverbindlich.') }}</p>
+    </div>
+    <span class="calculator-pill">{{ _('Ohne Kontaktdaten berechnen') }}</span>
+  </div>
+  <noscript><p>{{ _('Bitte aktivieren Sie JavaScript für den Rechner oder kontaktieren Sie uns direkt.') }} <a href="#kontakt">{{ _('Контакты') }}</a></p></noscript>
+  <div id="calculatorInteractive" class="calculator-layout" hidden>
+    <form id="movingCalculator" class="calculator-form" action="{{ url_for('calculate') }}" method="post" novalidate>
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <nav class="calculator-progress" aria-label="{{ _('Schritte im Preisrechner') }}">
+        {% for label in ['Strecke', 'Wohnung', 'Team & Möbel'] %}
+        <button type="button" class="calculator-step-tab" data-step-tab="{{ loop.index0 }}" {% if loop.first %}aria-current="step"{% endif %}>
+          <span>{{ '%02d'|format(loop.index) }}</span>{{ _(label) }}
+        </button>
+        {% endfor %}
+      </nav>
+
+      <fieldset class="calculator-step" data-step="0">
+        <legend>{{ _('Von A nach B') }}</legend>
+        <p class="calculator-help">{{ _('Tragen Sie die Fahrstrecke in Kilometern ein. Die Orte sind optional.') }}</p>
+        <div class="calculator-two">
+          <div><label for="calcFrom">{{ _('Auszugsort') }}</label><input id="calcFrom" name="from_place" maxlength="120" placeholder="{{ _('z. B. Bremen') }}" autocomplete="off"></div>
+          <div><label for="calcTo">{{ _('Einzugsort') }}</label><input id="calcTo" name="to_place" maxlength="120" placeholder="{{ _('z. B. Hamburg') }}" autocomplete="off"></div>
+        </div>
+        <label for="calcDistance">{{ _('Entfernung von A nach B') }}</label>
+        <div class="calculator-unit"><input id="calcDistance" name="distance" type="number" inputmode="decimal" min="0" max="3000" step="0.1" placeholder="25" required aria-describedby="distanceHint"><span>km</span></div>
+        <p class="calculator-help" id="distanceHint">{{ _('Bitte die Straßenentfernung angeben, nicht die Luftlinie. Bei mehreren Fahrten berücksichtigt der Rechner die Rückwege zwischen A und B.') }}</p>
+        <div class="calculator-tip"><span aria-hidden="true">↗</span><p>{{ _('Ob um die Ecke oder quer durch Deutschland: Wir planen mit Ihnen den passenden Transport.') }}</p></div>
+      </fieldset>
+
+      <fieldset class="calculator-step" data-step="1">
+        <legend>{{ _('Wie wohnen Sie?') }}</legend>
+        <p class="calculator-help">{{ _('Die Angaben beziehen sich auf die Wohnung, aus der Sie ausziehen.') }}</p>
+        <div class="calculator-two">
+          <div><label for="calcRooms">{{ _('Anzahl der Zimmer') }}</label><input id="calcRooms" name="rooms" type="number" min="1" max="15" step="1" value="2" required></div>
+          <div><label for="calcArea">{{ _('Wohnfläche') }}</label><div class="calculator-unit"><input id="calcArea" name="area" type="number" min="10" max="500" step="1" value="50" required><span>m²</span></div></div>
+        </div>
+        <fieldset class="calculator-choice-group">
+          <legend>{{ _('Wie voll ist die Wohnung?') }}</legend>
+          <div class="calculator-segments">
+            {% for value, label in [('low', 'Wenig'), ('medium', 'Mittel'), ('high', 'Viel')] %}
+            <label><input type="radio" name="occupancy" value="{{ value }}" {% if value == 'medium' %}checked{% endif %}><span>{{ _(label) }}</span></label>
+            {% endfor %}
+          </div>
+        </fieldset>
+        <div class="calculator-two calculator-stops">
+          {% for prefix, label, letter in [('from', 'Beim Auszug', 'A'), ('to', 'Beim Einzug', 'B')] %}
+          <fieldset class="calculator-stop">
+            <legend><span>{{ letter }}</span> {{ _(label) }}</legend>
+            <label for="calc-{{ prefix }}-floor">{{ _('Etage') }}</label>
+            <select id="calc-{{ prefix }}-floor" name="{{ prefix }}_floor">
+              <option value="0">{{ _('Erdgeschoss') }}</option>
+              {% for floor in range(1, 21) %}<option value="{{ floor }}">{{ floor }}</option>{% endfor %}
+            </select>
+            <label for="calc-{{ prefix }}-lift">{{ _('Aufzug für die Möbel nutzbar?') }}</label>
+            <select id="calc-{{ prefix }}-lift" name="{{ prefix }}_lift"><option value="no">{{ _('Ohne Aufzug') }}</option><option value="yes">{{ _('Mit Aufzug') }}</option></select>
+            <label for="calc-{{ prefix }}-parking">{{ _('Trageweg vom Eingang zum Fahrzeug') }}</label>
+            <select id="calc-{{ prefix }}-parking" name="{{ prefix }}_parking"><option value="10">{{ _('Bis 10 m') }}</option><option value="20">{{ _('Bis 20 m') }}</option><option value="30">{{ _('30 m oder mehr') }}</option></select>
+          </fieldset>
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <fieldset class="calculator-step" data-step="2">
+        <legend>{{ _('Das passende Team für Sie') }}</legend>
+        <div class="calculator-services">
+          {% for value, label, description in calculator_services %}
+          <label class="calculator-service"><input type="radio" name="service" value="{{ value }}" {% if value == 'one' %}checked{% endif %}>
+            <span class="calculator-service-copy"><strong>{{ _(label) }}</strong><span>{{ _(description) }}</span></span>
+            {% set rates = calculator_rates[value] %}
+            <span class="calculator-service-rate">{% if rates is none %}{{ _('Auf Anfrage') }}{% else %}{{ rates[0] }}{% if rates[0] != rates[1] %}–{{ rates[1] }}{% endif %} € / {{ _('Std.') }}{% endif %}</span>
+          </label>
+          {% endfor %}
+        </div>
+        <fieldset class="calculator-choice-group">
+          <legend>{{ _('Genauer mit Ihrer Möbelliste') }}</legend>
+          <p class="calculator-help">{{ _('Optional: Erfassen Sie die Möbel und Kartons, die tatsächlich mitkommen. Die Liste ersetzt die Schätzung nach Wohnfläche.') }}</p>
+          <div class="calculator-segments calculator-segments-two">
+            <label><input type="radio" name="inventory_mode" value="apartment" checked><span>{{ _('Nach Wohnungsgröße') }}</span></label>
+            <label><input type="radio" name="inventory_mode" value="items"><span>{{ _('Mit Möbelliste') }}</span></label>
+          </div>
+        </fieldset>
+        <div id="calculatorInventory" class="calculator-inventory" hidden>
+          {% for key, label, volume in calculator_items %}
+          <div class="calculator-item"><label for="calc-item-{{ key }}">{{ _(label) }}</label>
+            <div class="calculator-counter">
+              <button type="button" data-counter="{{ key }}" data-delta="-1" aria-label="{{ _('Weniger') }}: {{ _(label) }}">−</button>
+              <input id="calc-item-{{ key }}" data-item="{{ key }}" type="number" min="0" max="{{ 300 if key == 'boxes' else 50 }}" step="1" value="0" inputmode="numeric">
+              <button type="button" data-counter="{{ key }}" data-delta="1" aria-label="{{ _('Mehr') }}: {{ _(label) }}">+</button>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <label for="calcOther">{{ _('Weitere Gegenstände oder Besonderheiten') }}</label>
+        <textarea id="calcOther" name="other_items" rows="3" maxlength="500" placeholder="{{ _('z. B. Klavier, sehr schwere Möbel, Montage oder ein längerer Trageweg') }}"></textarea>
+        <p class="calculator-help">{{ _('Diese Angaben prüfen wir persönlich; sie werden nicht automatisch eingepreist.') }}</p>
+      </fieldset>
+
+      <p id="calculatorStatus" class="calculator-status" role="status" aria-live="polite"></p>
+      <div class="calculator-actions">
+        <button class="btn-outline" type="button" id="calculatorBack">{{ _('Zurück') }}</button>
+        <button class="btn" type="button" id="calculatorNext">{{ _('Weiter') }} <span aria-hidden="true">→</span></button>
+        <button class="btn" type="submit" id="calculatorSubmit" hidden>{{ _('Preisrahmen berechnen') }} <span aria-hidden="true">→</span></button>
+      </div>
+    </form>
+
+    <aside class="calculator-result" aria-labelledby="calculatorResultTitle">
+      <div class="calculator-result-top"><span aria-hidden="true">↗</span><span>{{ _('Gut geplant umziehen') }}</span></div>
+      <h3 id="calculatorResultTitle" tabindex="-1">{{ _('Ihre Preisorientierung') }}</h3>
+      <p id="calculatorPrice" class="calculator-price">—</p>
+      <p id="calculatorPriceCaption" class="calculator-result-caption">{{ _('Füllen Sie die drei Schritte aus. Hier erscheint Ihr unverbindlicher Preisrahmen.') }}</p>
+      <dl class="calculator-summary">
+        <div><dt>{{ _('Strecke A → B') }}</dt><dd id="calculatorSummaryDistance">—</dd></div>
+        <div><dt>{{ _('Wohnung') }}</dt><dd id="calculatorSummaryHome">—</dd></div>
+        <div><dt>{{ _('Team') }}</dt><dd id="calculatorSummaryTeam">—</dd></div>
+      </dl>
+      <dl class="calculator-summary calculator-estimate-details" id="calculatorEstimateDetails" hidden>
+        <div><dt>{{ _('Geschätztes Volumen') }}</dt><dd id="calculatorVolume">—</dd></div>
+        <div><dt>{{ _('Fahrten A → B') }}</dt><dd id="calculatorTrips">—</dd></div>
+        <div><dt>{{ _('Geschätzte Dauer') }}</dt><dd id="calculatorHours">—</dd></div>
+      </dl>
+      <p id="calculatorReview" class="calculator-review" hidden>{{ _('Besondere Gegenstände oder lange Tragewege können den Preis erhöhen. Wir prüfen Ihre Angaben persönlich.') }}</p>
+      <button class="btn calculator-request" id="calculatorRequest" type="button" hidden>{{ _('Mit diesen Angaben anfragen') }}</button>
+      <p class="calculator-footnote">{{ _('Eine erste Orientierung, kein Festpreis. Grundlage sind die Stundensätze auf dieser Website und eine grobe Zeitschätzung.') }}</p>
+      <details class="calculator-assumptions"><summary>{{ _('Was ist berücksichtigt?') }}</summary>
+        <p>{{ _('Mit Umzugshelfern: Tragen, Be- und Entladen sowie die Fahrt zwischen A und B. Etagen, Aufzüge und Tragewege beeinflussen die geschätzte Arbeitszeit.') }}</p>
+        <p>{{ _('Modellannahmen: ca. 14 m³ pro Fahrt und durchschnittlich 50 km/h. Volumen und Zeit können je nach Möbeln, Gewicht und Verkehr abweichen.') }}</p>
+        <p>{{ _('An- und Abfahrt zum Betrieb, Parkgebühren, Verpackung und Möbelmontage sind nicht enthalten und werden separat vereinbart.') }}</p>
+        <p>{{ _('Bei 30 m oder mehr wird zunächst mit 30 m gerechnet. Bitte längere Wege im Freitext angeben.') }}</p>
+      </details>
+    </aside>
+  </div>
+</section>
+<script id="calculatorMessages" type="application/json">{{ {
+  'initial': _('Füllen Sie die drei Schritte aus. Hier erscheint Ihr unverbindlicher Preisrahmen.'),
+  'changed': _('Angaben geändert. Bitte neu berechnen.'),
+  'busy': _('Wird berechnet…'),
+  'invalid': _('Bitte prüfen Sie die markierten Angaben.'),
+  'empty_items': _('Bitte mindestens ein Möbelstück oder einen Karton eintragen.'),
+  'network': _('Die Berechnung ist gerade nicht verfügbar. Bitte versuchen Sie es erneut oder rufen Sie uns an.'),
+  'expired': _('Bitte laden Sie die Seite neu und versuchen Sie es erneut.'),
+  'rate_limit': _('Zu viele Anfragen. Bitte versuchen Sie es später erneut.'),
+  'range': _('Unverbindlicher Preisrahmen. Den endgültigen Preis bestätigen wir nach Prüfung Ihrer Angaben.'),
+  'on_request': _('Auf Anfrage'),
+  'driver_note': _('Für einen Transporter mit Fahrer ohne Tragehilfe erstellen wir Ihnen ein individuelles Angebot.'),
+  'rooms': _('Zimmer'), 'hours': _('Std.'),
+  'attached': _('Ihre Umzugsdaten sind der Anfrage beigefügt. Ergänzen Sie jetzt Ihre Kontaktdaten.'),
+  'services': {'driver': _('Fahrer ohne Tragehilfe'), 'one': _('1 Umzugshelfer'), 'two': _('2 Umzugshelfer')}
+}|tojson }}</script>

@@ -25,13 +25,16 @@ class Config:
 
     # Удобно при правке шаблонов
     TEMPLATES_AUTO_RELOAD = True
-    JSON_AS_ASCII = False   # чтобы JSON не экранировал кириллицу
+    # При нескольких workers можно задать общий Redis backend через окружение.
+    RATELIMIT_STORAGE_URI = os.getenv("RATELIMIT_STORAGE_URI", "memory://")
 
 class ProdConfig(Config):
     ENV = "production"
     DEBUG = False
+    TEMPLATES_AUTO_RELOAD = False
 
 class DevConfig(Config):
     ENV = "development"
     DEBUG = True
     SESSION_COOKIE_SECURE = False      # локально без HTTPS
+    PREFERRED_URL_SCHEME = "http"

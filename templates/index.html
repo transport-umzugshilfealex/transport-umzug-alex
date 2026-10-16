@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}Transport & Umzugshilfe Alex — {{ _('Schnell, sicher, zuverlässig') }}{% endblock %}
+{% block extra_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/calculator.css') }}">{% endblock %}
+{% block extra_scripts %}<script src="{{ url_for('static', filename='js/calculator.js') }}" defer></script>{% endblock %}
 {% block content %}
 <section class="hero container" id="home">
-<span class="chip">Bremen und Ganz Deutschland</span>
+<span class="chip">{{ _('Bremen und ganz Deutschland') }}</span>
 <h1>
   {{ _('Transport & Umzugshilfe Alex') }}<br/>
   <span class="muted">
@@ -11,7 +13,8 @@
 </h1>
 <p class="sub">{{ _('Переезды, грузоперевозки до 3,5 т, курьерские и доставочные услуги. Погрузка-разгрузка, сборка мебели и вывоз ненужного. Работаем аккуратно, вовремя и по справедливой цене.') }}</p>
 <div class="cta-row">
-<a class="btn" href="#kontakt">{{ _('Заказать звонок') }}</a>
+<a class="btn" href="#rechner">{{ _('Umzugskosten berechnen') }} <span aria-hidden="true">↗</span></a>
+<a class="btn-outline" href="#kontakt">{{ _('Заказать звонок') }}</a>
 <a class="btn-outline" href="#leistungen">{{ _('Подробнее об услугах') }}</a>
 </div>
 <div class="stats">
@@ -28,7 +31,7 @@
 
 <section id="leistungen" class="container">
 <h2>{{ _('Услуги') }}</h2>
-<p class="muted" lang="de">{{ _('Перевозки, переезды, расчистка помещений, утилизация бытовых вещей, помощь с погрузкой и разгрузкой, курьерские услуги, помощь в сборке мебели — гибко и надёжно.') }}</p>
+<p class="muted">{{ _('Перевозки, переезды, расчистка помещений, утилизация бытовых вещей, помощь с погрузкой и разгрузкой, курьерские услуги, помощь в сборке мебели — гибко и надёжно.') }}</p>
 <div class="cards">
 <article class="card"><div class="icon">🚛</div><h3>{{ _('Переезды «под ключ»') }}</h3><p class="muted">{{ _('Квартирные и офисные переезды, расчистка помещений, утилизация бытовых вещей, планирование.') }}</p></article>
 <article class="card"><div class="icon">📦</div><h3>{{ _('Грузоперевозки до 3,5 т') }}</h3><p class="muted">{{ _('Доставка техники, мебели и перевозка груза из точки А в точку Б — по всей Германии.') }}</p></article>
@@ -60,6 +63,8 @@
 </section>
 
 
+{% include '_calculator.html' %}
+
 <section id="preise" class="container">
 <h2>{{ _('Ориентировочные тарифы') }}</h2>
 <p class="muted">{{ _('Ниже — примеры. Точный расчёт...') }}</p>
@@ -74,20 +79,25 @@
 <section id="kontakt" class="container split">
 <div>
 <h2>{{ _('Связаться с нами') }}</h2>
-<p class="muted">Bremen und Ganz Deutschland</p>
+<p class="muted">{{ _('Bremen und ganz Deutschland') }}</p>
 <form id="contactForm" method="post" action="{{ url_for('contact') }}">
-<div class="twocol">
-<div><label for="name">{{ _('Имя') }}</label><input id="name" name="name" required></div>
-<div><label for="phone">{{ _('Телефон') }}</label><input id="phone" name="phone" required></div>
+<input type="hidden" id="contactCalculatorData" name="calculator_data" value="">
+<div id="contactCalculatorAttached" class="calculator-attached" hidden>
+  <p id="contactCalculatorNote" role="status"></p>
+  <button id="contactCalculatorRemove" type="button">{{ _('Umzugsdaten entfernen') }}</button>
 </div>
-<div><label for="email">E‑mail</label><input id="email" name="email" type="email"></div>
-<div><label for="message">{{ _('Сообщение') }}</label><textarea id="message" name="message" rows="4"></textarea></div>
+<div class="twocol">
+<div><label for="name">{{ _('Имя') }}</label><input id="name" name="name" autocomplete="name" maxlength="80" required></div>
+<div><label for="phone">{{ _('Телефон') }}</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="32" required></div>
+</div>
+<div><label for="email">{{ _('E-Mail (optional)') }}</label><input id="email" name="email" type="email" autocomplete="email" maxlength="120"></div>
+<div><label for="message">{{ _('Сообщение') }}</label><textarea id="message" name="message" rows="4" maxlength="2000"></textarea></div>
 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
 <div class="twocol">
 <button class="btn" type="submit">{{ _('Отправить заявку') }}</button>
 <a class="btn-outline" href="tel:+491757412613">{{ _('Позвонить сейчас') }}</a>
 </div>
-<div id="formStatus" class="muted" role="status" aria-live="polite"></div>
+<div id="formStatus" class="muted" role="status" aria-live="polite" tabindex="-1"></div>
 </form>
 </div>
 <aside class="card">
@@ -106,12 +116,12 @@
 ✉️ <strong>E‑mail:</strong> <a href="mailto:transport.umzugshilfealex@gmail.com">transport.umzugshilfealex@gmail.com</a><br>
 🌐 <strong>Web:</strong> <a href="https://transport-umzug-alex.de">transport-umzug-alex.de</a></p>
 <p class="muted">{{ _('Работаем: Пн–Сб, 8:00–20:00 (возможны ночные окна по договорённости).') }}</p>
-<div id="map" class="map" aria-label="Karte: Bremen-Nord, Deutschland"></div>
+<div id="map" class="map" aria-label="{{ _('Karte: Bremen-Nord, Deutschland') }}" data-zoom-in="{{ _('Vergrößern') }}" data-zoom-out="{{ _('Verkleinern') }}" data-contributors="{{ _('OpenStreetMap-Mitwirkende') }}"></div>
 <noscript>
   <div class="map-placeholder">
     <div>
       <strong>Bremen-Nord</strong>
-      <div class="muted">Deutschland</div>
+      <div class="muted">{{ _('Deutschland') }}</div>
     </div>
   </div>
 </noscript>

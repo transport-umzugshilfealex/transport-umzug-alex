@@ -9,47 +9,7 @@
   const acceptButton = document.getElementById("cookieAccept");
   const rejectButton = document.getElementById("cookieReject");
   const settingsButton = document.getElementById("cookieSettings");
-  const title = document.getElementById("cookieTitle");
-  const text = document.getElementById("cookieText");
-  const privacyLink = document.getElementById("cookiePrivacyLink");
-
   if (!banner || !acceptButton || !rejectButton) return;
-
-  const language = (document.documentElement.lang || "de")
-    .toLowerCase()
-    .split("-")[0];
-
-  const messages = {
-    de: {
-      title: "Datenschutzeinstellungen",
-      text: "Wir verwenden optionale Analyse-Cookies von Google Analytics, um die Nutzung unserer Website zu verstehen. Sie können zustimmen oder ablehnen.",
-      privacy: "Mehr erfahren",
-      accept: "Alle akzeptieren",
-      reject: "Ablehnen"
-    },
-    ru: {
-      title: "Настройки конфиденциальности",
-      text: "Мы используем необязательные аналитические файлы cookie Google Analytics, чтобы понимать, как используется сайт. Вы можете согласиться или отказаться.",
-      privacy: "Подробнее",
-      accept: "Принять все",
-      reject: "Отклонить"
-    },
-    en: {
-      title: "Privacy settings",
-      text: "We use optional Google Analytics cookies to understand how our website is used. You can accept or reject them.",
-      privacy: "Learn more",
-      accept: "Accept all",
-      reject: "Reject"
-    }
-  };
-
-  const copy = messages[language] || messages.de;
-
-  title.textContent = copy.title;
-  text.textContent = copy.text;
-  privacyLink.textContent = copy.privacy;
-  acceptButton.textContent = copy.accept;
-  rejectButton.textContent = copy.reject;
 
   const readChoice = () => {
     try {
@@ -77,11 +37,12 @@
   };
 
   const loadAnalytics = () => {
-    if (!GA_ID || window.__googleAnalyticsLoaded) return;
+    if (!GA_ID) return;
+    window["ga-disable-" + GA_ID] = false;
+    updateConsent("granted");
+    if (window.__googleAnalyticsLoaded) return;
 
     window.__googleAnalyticsLoaded = true;
-
-    updateConsent("granted");
 
     window.gtag("js", new Date());
     window.gtag("config", GA_ID, {
@@ -106,11 +67,11 @@
         document.cookie =
           name + "=; Max-Age=0; path=/; SameSite=Lax";
 
-        document.cookie =
-          name +
-          "=; Max-Age=0; path=/; domain=" +
-          location.hostname +
-          "; SameSite=Lax";
+        const parts = location.hostname.split(".");
+        for (let index = 0; index < parts.length - 1; index += 1) {
+          document.cookie = name + "=; Max-Age=0; path=/; domain=" +
+            parts.slice(index).join(".") + "; SameSite=Lax";
+        }
       }
     });
   };
@@ -132,6 +93,7 @@
 
   rejectButton.addEventListener("click", () => {
     saveChoice("rejected");
+    if (GA_ID) window["ga-disable-" + GA_ID] = true;
     updateConsent("denied");
     deleteAnalyticsCookies();
     hideBanner();
@@ -148,19 +110,8 @@
   }
 })();
 
-// ---------- Language selection ----------
+// ---------- Navigation and contact form ----------
 (() => {
-  document.querySelectorAll("[data-lang]").forEach((link) => {
-    link.addEventListener("click", () => {
-      try {
-        localStorage.setItem(
-          "site-language-selected",
-          link.dataset.lang
-        );
-      } catch (_) {}
-    });
-  });
-
   // ---------- Burger menu ----------
   const button = document.getElementById("menuToggle");
   const menu = document.getElementById("mainmenu");
@@ -223,7 +174,7 @@
         event.preventDefault();
 
         element.scrollIntoView({
-          behavior: "smooth",
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
           block: "start"
         });
       });
@@ -248,6 +199,11 @@
     .split("-")[0];
 
   const messages = {
+    email_invalid: {
+      de: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      en: "Please enter a valid email address.",
+      ru: "Введите корректный адрес электронной почты."
+    },
     sent: {
       de: "Gesendet! Wir melden uns bald.",
       en: "Sent! We will contact you shortly.",
@@ -269,9 +225,29 @@
       ru: "Отправляем…"
     },
     timeout: {
-      de: "Zeitüberschreitung.",
-      en: "Request timed out.",
-      ru: "Превышено время ожидания."
+      de: "Keine Bestätigung erhalten. Bitte kontaktieren Sie uns telefonisch, bevor Sie erneut senden.",
+      en: "No confirmation received. Please call us before sending again.",
+      ru: "Подтверждение не получено. Позвоните нам перед повторной отправкой."
+    },
+    server: {
+      de: "Die Nachricht konnte nicht gesendet werden. Bitte rufen Sie uns an.",
+      en: "The message could not be sent. Please call us.",
+      ru: "Не удалось отправить сообщение. Позвоните нам."
+    },
+    rate_limit: {
+      de: "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
+      en: "Too many requests. Please try again later.",
+      ru: "Слишком много запросов. Попробуйте позже."
+    },
+    csrf_token: {
+      de: "Bitte laden Sie die Seite neu und versuchen Sie es erneut.",
+      en: "Please reload the page and try again.",
+      ru: "Обновите страницу и попробуйте снова."
+    },
+    calculator_data: {
+      de: "Bitte berechnen Sie Ihren Umzug erneut oder entfernen Sie die Umzugsdaten aus der Anfrage.",
+      en: "Please recalculate your move or remove the moving details from your request.",
+      ru: "Рассчитайте переезд заново или уберите данные переезда из заявки."
     }
   };
 
@@ -320,7 +296,7 @@
     const timeout = setTimeout(() => {
       requestTimedOut = true;
       controller.abort();
-    }, 15000);
+    }, 60000);
 
     try {
       const response = await fetch(form.action, {
@@ -346,7 +322,7 @@
         statusElement?.focus();
       } else {
         let message =
-          "⚠️ " + translate("check");
+          "⚠️ " + translate(response.status === 429 ? "rate_limit" : response.status >= 500 ? "server" : "check");
 
         try {
           const result = await response.json();
@@ -373,8 +349,12 @@
               Array.isArray(firstError) &&
               firstError[0]
             ) {
-              message +=
-                " — " + String(firstError[0]);
+              const specialError = ["server", "rate_limit", "csrf_token", "calculator_data"].find(
+                (key) => Object.hasOwn(result.errors, key)
+              );
+              message = specialError
+                ? "⚠️ " + translate(specialError)
+                : message + " — " + String(firstError[0]);
             }
           }
         } catch (_) {}
@@ -420,7 +400,7 @@
       )
     ) {
       emailInput.setCustomValidity(
-        "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+        translate("email_invalid")
       );
     }
   });
@@ -449,6 +429,11 @@
   );
 
   if (!buttons.length) return;
+
+  if (!root.dataset.theme) {
+    root.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark" : "light";
+  }
 
   try {
     const savedTheme =
@@ -510,22 +495,34 @@
   const longitude = 8.6233;
 
   const map = L.map(mapElement, {
-    scrollWheelZoom: false
+    scrollWheelZoom: false,
+    zoomControl: false
   }).setView(
     [latitude, longitude],
     12
   );
+
+  L.control.zoom({
+    zoomInTitle: mapElement.dataset.zoomIn,
+    zoomOutTitle: mapElement.dataset.zoomOut
+  }).addTo(map);
 
   L.tileLayer(
     "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
       maxZoom: 19,
       attribution:
-        "© OpenStreetMap-Mitwirkende"
+        '© <a href="https://www.openstreetmap.org/copyright">' + mapElement.dataset.contributors + "</a>"
     }
   ).addTo(map);
 
-  L.marker([latitude, longitude])
+  L.circleMarker([latitude, longitude], {
+    radius: 9,
+    color: "#ffffff",
+    weight: 2,
+    fillColor: "#d62828",
+    fillOpacity: 1
+  })
     .addTo(map)
     .bindPopup("Bremen-Nord")
     .openPopup();

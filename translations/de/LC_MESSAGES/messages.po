@@ -1,19 +1,25 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: transport-umzug-alex\n"
+"Project-Id-Version:  transport-umzug-alex\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-10-22 00:00+0000\n"
 "PO-Revision-Date: 2025-10-22 00:00+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
 "Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
 
 # base.html
-msgid "Транспорт, помощь при переездах и логистика в Бремене и по всей Германии. Быстро, безопасно, надёжно."
-msgstr "Transport, Umzugshilfe und Logistik in Bremen und in ganz Deutschland. Schnell, sicher, zuverlässig."
+msgid ""
+"Транспорт, помощь при переездах и логистика в Бремене и по всей Германии."
+" Быстро, безопасно, надёжно."
+msgstr ""
+"Transport, Umzugshilfe und Logistik in Bremen und in ganz Deutschland. "
+"Schnell, sicher, zuverlässig."
 
 msgid "Услуги"
 msgstr "Leistungen"
@@ -37,14 +43,24 @@ msgstr "Sprache"
 msgid "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig."
 msgstr "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig."
 
-msgid "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig — и всегда рады помочь."
-msgstr "Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig – und immer gerne für Sie da."
+msgid ""
+"Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig — и "
+"всегда рады помочь."
+msgstr ""
+"Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig – und "
+"immer gerne für Sie da."
 
 msgid "Schnell, sicher, zuverlässig — и всегда рады помочь!"
 msgstr "Schnell, sicher, zuverlässig – und immer gerne für Sie da!"
 
-msgid "Переезды, грузоперевозки до 3,5 т, курьерские и доставочные услуги. Погрузка-разгрузка, сборка мебели и вывоз ненужного. Работаем аккуратно, вовремя и по справедливой цене."
-msgstr "Umzüge, Transporte bis 3,5 t, Kurier- und Lieferdienste. Be- und Entladen, Möbelmontage und Entsorgung. Sorgfältig, pünktlich und fair im Preis."
+msgid ""
+"Переезды, грузоперевозки до 3,5 т, курьерские и доставочные услуги. "
+"Погрузка-разгрузка, сборка мебели и вывоз ненужного. Работаем аккуратно, "
+"вовремя и по справедливой цене."
+msgstr ""
+"Umzüge, Transporte bis 3,5 t, Kurier- und Lieferdienste. Be- und "
+"Entladen, Möbelmontage und Entsorgung. Sorgfältig, pünktlich und fair im "
+"Preis."
 
 msgid "Заказать звонок"
 msgstr "Rückruf anfordern"
@@ -65,20 +81,32 @@ msgid "С нами ваши вещи застрахованы"
 msgstr "Mit uns sind Ihre Sachen versichert"
 
 # index.html — Leistungen
-msgid "Перевозки, переезды, расчистка помещений, утилизация бытовых вещей, помощь с погрузкой и разгрузкой, курьерские услуги, помощь в сборке мебели — гибко и надёжно."
-msgstr "Transporte, Umzüge, Entrümpelung, Haushaltsentsorgung, Be- und Entladehilfe, Kurierdienste, Möbelmontage Hilfe – flexibel und zuverlässig."
+msgid ""
+"Перевозки, переезды, расчистка помещений, утилизация бытовых вещей, "
+"помощь с погрузкой и разгрузкой, курьерские услуги, помощь в сборке "
+"мебели — гибко и надёжно."
+msgstr ""
+"Transporte, Umzüge, Entrümpelung, Haushaltsentsorgung, Be- und "
+"Entladehilfe, Kurierdienste, Möbelmontage Hilfe – flexibel und "
+"zuverlässig."
 
 msgid "Переезды «под ключ»"
 msgstr "Umzüge „schlüsselfertig“"
 
-msgid "Квартирные и офисные переезды, расчистка помещений, утилизация бытовых вещей, планирование."
+msgid ""
+"Квартирные и офисные переезды, расчистка помещений, утилизация бытовых "
+"вещей, планирование."
 msgstr "Wohnungs- und Büroumzüge, Entrümpelung, Haushaltsentsorgung , Planung."
 
 msgid "Грузоперевозки до 3,5 т"
 msgstr "Transporte bis 3,5 t"
 
-msgid "Доставка техники, мебели и перевозка груза из точки А в точку Б — по всей Германии."
-msgstr "Lieferung von Geräten, Möbeln und Transport von A nach B – in ganz Deutschland."
+msgid ""
+"Доставка техники, мебели и перевозка груза из точки А в точку Б — по всей"
+" Германии."
+msgstr ""
+"Lieferung von Geräten, Möbeln und Transport von A nach B – in ganz "
+"Deutschland."
 
 msgid "Помощь в сборке мебели"
 msgstr "Möbelmontage Hilfe"
@@ -133,14 +161,22 @@ msgstr "So läuft es ab"
 msgid "Заявка"
 msgstr "Anfrage"
 
-msgid "Вы звоните или пишете — указываете адрес, объём, лифт/этаж, дату и пожелания. Также необходимо добавить список с описанием перевозимого груза."
-msgstr "Sie rufen an oder schreiben – geben Adresse, Volumen, Aufzug/Etage, Datum und Wünsche an. Außerdem fügen Sie bitte eine Liste mit der Beschreibung der transportierten Gegenstände hinzu."
+msgid ""
+"Вы звоните или пишете — указываете адрес, объём, лифт/этаж, дату и "
+"пожелания. Также необходимо добавить список с описанием перевозимого "
+"груза."
+msgstr ""
+"Sie rufen an oder schreiben – geben Adresse, Volumen, Aufzug/Etage, Datum"
+" und Wünsche an. Außerdem fügen Sie bitte eine Liste mit der Beschreibung"
+" der transportierten Gegenstände hinzu."
 
 msgid "Смета и подтверждение"
 msgstr "Angebot & Bestätigung"
 
 msgid "Предлагаем слот..."
-msgstr "Wir schlagen Zeitfenster, Preis und Team vor – transparent und schriftlich."
+msgstr ""
+"Wir schlagen Zeitfenster, Preis und Team vor – transparent und "
+"schriftlich."
 
 msgid "Переезд"
 msgstr "Umzug"
@@ -168,7 +204,9 @@ msgid "Стандарт"
 msgstr "Standard"
 
 msgid "Фургон + дополнительные грузчики, а также монтаж мебели по договорённости"
-msgstr "Transporter + zusätzliche Umzugshelfer sowie Möbelmontage nach Vereinbarung"
+msgstr ""
+"Transporter + zusätzliche Umzugshelfer sowie Möbelmontage nach "
+"Vereinbarung"
 
 msgid "от 80–100 € / час"
 msgstr "ab 80–100 € / Std"
@@ -208,5 +246,468 @@ msgid "Работаем: Пн–Сб, 8:00–20:00 (возможны ночны�
 msgstr "Mo–Sa, 8–20 Uhr (Nachtfenster nach Absprache)."
 
 # privacy.html
-msgid "Мы храним только необходимую информацию, отправленную через форму, и не передаём её третьим лицам, если это не требуется законом."
-msgstr "Wir speichern nur notwendige Formulardaten und geben sie nicht an Dritte weiter – außer gesetzlich erforderlich."
+msgid ""
+"Мы храним только необходимую информацию, отправленную через форму, и не "
+"передаём её третьим лицам, если это не требуется законом."
+msgstr ""
+"Wir speichern nur notwendige Formulardaten und geben sie nicht an Dritte "
+"weiter – außer gesetzlich erforderlich."
+
+msgid "Schnell, sicher, zuverlässig"
+msgstr "Schnell, sicher, zuverlässig"
+
+msgid "Schnell, sicher, zuverlässig – und immer gerne für Sie da!"
+msgstr "Schnell, sicher, zuverlässig – und immer gerne für Sie da!"
+
+msgid "Anrufen"
+msgstr "Anrufen"
+
+msgid "Telefonkontakt"
+msgstr "Telefonkontakt"
+
+msgid "Menü"
+msgstr "Menü"
+
+msgid "Hauptnavigation"
+msgstr "Hauptnavigation"
+
+msgid "Sprache wählen"
+msgstr "Sprache wählen"
+
+msgid "Farbschema wechseln"
+msgstr "Farbschema wechseln"
+
+msgid "Datenschutzeinstellungen"
+msgstr "Datenschutzeinstellungen"
+
+msgid ""
+"Wir verwenden optionale Analyse-Cookies von Google Analytics, um die "
+"Nutzung unserer Website zu verstehen. Sie können zustimmen oder ablehnen."
+msgstr ""
+"Wir verwenden optionale Analyse-Cookies von Google Analytics, um die "
+"Nutzung unserer Website zu verstehen. Sie können zustimmen oder ablehnen."
+
+msgid "Mehr erfahren"
+msgstr "Mehr erfahren"
+
+msgid "Alle akzeptieren"
+msgstr "Alle akzeptieren"
+
+msgid "Ablehnen"
+msgstr "Ablehnen"
+
+msgid "Impressum"
+msgstr "Impressum"
+
+msgid "Datenschutz"
+msgstr "Datenschutz"
+
+msgid "Cookie-Einstellungen"
+msgstr "Cookie-Einstellungen"
+
+msgid "Bremen und ganz Deutschland"
+msgstr "Bremen und ganz Deutschland"
+
+msgid "Deutschland"
+msgstr "Deutschland"
+
+msgid "Karte: Bremen-Nord, Deutschland"
+msgstr "Karte: Bremen-Nord, Deutschland"
+
+msgid "E-Mail (optional)"
+msgstr "E-Mail (optional)"
+
+msgid "Vergrößern"
+msgstr "Vergrößern"
+
+msgid "Verkleinern"
+msgstr "Verkleinern"
+
+msgid "OpenStreetMap-Mitwirkende"
+msgstr "OpenStreetMap-Mitwirkende"
+
+msgid "Preisrechner"
+msgstr "Preisrechner"
+
+msgid "Umzugskosten berechnen"
+msgstr "Umzugskosten berechnen"
+
+msgid "Umzugsdaten entfernen"
+msgstr "Umzugsdaten entfernen"
+
+msgid "Ihr Umzug. Ihr Überblick."
+msgstr "Ihr Umzug. Ihr Überblick."
+
+msgid "Was kostet Ihr Umzug?"
+msgstr "Was kostet Ihr Umzug?"
+
+msgid ""
+"In drei Schritten zu einer ersten Preisorientierung. Kostenlos und "
+"unverbindlich."
+msgstr ""
+"In drei Schritten zu einer ersten Preisorientierung. Kostenlos und "
+"unverbindlich."
+
+msgid "Ohne Kontaktdaten berechnen"
+msgstr "Ohne Kontaktdaten berechnen"
+
+msgid ""
+"Bitte aktivieren Sie JavaScript für den Rechner oder kontaktieren Sie uns"
+" direkt."
+msgstr ""
+"Bitte aktivieren Sie JavaScript für den Rechner oder kontaktieren Sie uns"
+" direkt."
+
+msgid "Schritte im Preisrechner"
+msgstr "Schritte im Preisrechner"
+
+msgid "Strecke"
+msgstr "Strecke"
+
+msgid "Wohnung"
+msgstr "Wohnung"
+
+msgid "Team & Möbel"
+msgstr "Team & Möbel"
+
+msgid "Von A nach B"
+msgstr "Von A nach B"
+
+msgid "Tragen Sie die Fahrstrecke in Kilometern ein. Die Orte sind optional."
+msgstr "Tragen Sie die Fahrstrecke in Kilometern ein. Die Orte sind optional."
+
+msgid "Auszugsort"
+msgstr "Auszugsort"
+
+msgid "Einzugsort"
+msgstr "Einzugsort"
+
+msgid "z. B. Bremen"
+msgstr "z. B. Bremen"
+
+msgid "z. B. Hamburg"
+msgstr "z. B. Hamburg"
+
+msgid "Entfernung von A nach B"
+msgstr "Entfernung von A nach B"
+
+msgid ""
+"Bitte die Straßenentfernung angeben, nicht die Luftlinie. Bei mehreren "
+"Fahrten berücksichtigt der Rechner die Rückwege zwischen A und B."
+msgstr ""
+"Bitte die Straßenentfernung angeben, nicht die Luftlinie. Bei mehreren "
+"Fahrten berücksichtigt der Rechner die Rückwege zwischen A und B."
+
+msgid ""
+"Ob um die Ecke oder quer durch Deutschland: Wir planen mit Ihnen den "
+"passenden Transport."
+msgstr ""
+"Ob um die Ecke oder quer durch Deutschland: Wir planen mit Ihnen den "
+"passenden Transport."
+
+msgid "Wie wohnen Sie?"
+msgstr "Wie wohnen Sie?"
+
+msgid "Die Angaben beziehen sich auf die Wohnung, aus der Sie ausziehen."
+msgstr "Die Angaben beziehen sich auf die Wohnung, aus der Sie ausziehen."
+
+msgid "Anzahl der Zimmer"
+msgstr "Anzahl der Zimmer"
+
+msgid "Wohnfläche"
+msgstr "Wohnfläche"
+
+msgid "Wie voll ist die Wohnung?"
+msgstr "Wie voll ist die Wohnung?"
+
+msgid "Wenig"
+msgstr "Wenig"
+
+msgid "Mittel"
+msgstr "Mittel"
+
+msgid "Viel"
+msgstr "Viel"
+
+msgid "Beim Auszug"
+msgstr "Beim Auszug"
+
+msgid "Beim Einzug"
+msgstr "Beim Einzug"
+
+msgid "Etage"
+msgstr "Etage"
+
+msgid "Erdgeschoss"
+msgstr "Erdgeschoss"
+
+msgid "Aufzug für die Möbel nutzbar?"
+msgstr "Aufzug für die Möbel nutzbar?"
+
+msgid "Ohne Aufzug"
+msgstr "Ohne Aufzug"
+
+msgid "Mit Aufzug"
+msgstr "Mit Aufzug"
+
+msgid "Trageweg vom Eingang zum Fahrzeug"
+msgstr "Trageweg vom Eingang zum Fahrzeug"
+
+msgid "Bis 10 m"
+msgstr "Bis 10 m"
+
+msgid "Bis 20 m"
+msgstr "Bis 20 m"
+
+msgid "30 m oder mehr"
+msgstr "30 m oder mehr"
+
+msgid "Das passende Team für Sie"
+msgstr "Das passende Team für Sie"
+
+msgid "Transporter mit Fahrer"
+msgstr "Transporter mit Fahrer"
+
+msgid "Sie übernehmen das Be- und Entladen."
+msgstr "Sie übernehmen das Be- und Entladen."
+
+msgid "Sprinter + 1 Umzugshelfer"
+msgstr "Sprinter + 1 Umzugshelfer"
+
+msgid "Der Fahrer hilft beim Tragen und Laden."
+msgstr "Der Fahrer hilft beim Tragen und Laden."
+
+msgid "Sprinter + 2 Umzugshelfer"
+msgstr "Sprinter + 2 Umzugshelfer"
+
+msgid "Zwei Helfer packen an. Einer davon fährt."
+msgstr "Zwei Helfer packen an. Einer davon fährt."
+
+msgid "Auf Anfrage"
+msgstr "Auf Anfrage"
+
+msgid "Std."
+msgstr "Std."
+
+msgid "Genauer mit Ihrer Möbelliste"
+msgstr "Genauer mit Ihrer Möbelliste"
+
+msgid ""
+"Optional: Erfassen Sie die Möbel und Kartons, die tatsächlich mitkommen. "
+"Die Liste ersetzt die Schätzung nach Wohnfläche."
+msgstr ""
+"Optional: Erfassen Sie die Möbel und Kartons, die tatsächlich mitkommen. "
+"Die Liste ersetzt die Schätzung nach Wohnfläche."
+
+msgid "Nach Wohnungsgröße"
+msgstr "Nach Wohnungsgröße"
+
+msgid "Mit Möbelliste"
+msgstr "Mit Möbelliste"
+
+msgid "Umzugskartons"
+msgstr "Umzugskartons"
+
+msgid "Sofa"
+msgstr "Sofa"
+
+msgid "Sessel"
+msgstr "Sessel"
+
+msgid "Bett mit Matratze"
+msgstr "Bett mit Matratze"
+
+msgid "Kleiderschrank"
+msgstr "Kleiderschrank"
+
+msgid "Kommode"
+msgstr "Kommode"
+
+msgid "Tisch"
+msgstr "Tisch"
+
+msgid "Stuhl"
+msgstr "Stuhl"
+
+msgid "Schreibtisch"
+msgstr "Schreibtisch"
+
+msgid "Regal"
+msgstr "Regal"
+
+msgid "Waschmaschine"
+msgstr "Waschmaschine"
+
+msgid "Kühlschrank"
+msgstr "Kühlschrank"
+
+msgid "Weniger"
+msgstr "Weniger"
+
+msgid "Mehr"
+msgstr "Mehr"
+
+msgid "Weitere Gegenstände oder Besonderheiten"
+msgstr "Weitere Gegenstände oder Besonderheiten"
+
+msgid "z. B. Klavier, sehr schwere Möbel, Montage oder ein längerer Trageweg"
+msgstr "z. B. Klavier, sehr schwere Möbel, Montage oder ein längerer Trageweg"
+
+msgid ""
+"Diese Angaben prüfen wir persönlich; sie werden nicht automatisch "
+"eingepreist."
+msgstr ""
+"Diese Angaben prüfen wir persönlich; sie werden nicht automatisch "
+"eingepreist."
+
+msgid "Zurück"
+msgstr "Zurück"
+
+msgid "Weiter"
+msgstr "Weiter"
+
+msgid "Preisrahmen berechnen"
+msgstr "Preisrahmen berechnen"
+
+msgid "Gut geplant umziehen"
+msgstr "Gut geplant umziehen"
+
+msgid "Ihre Preisorientierung"
+msgstr "Ihre Preisorientierung"
+
+msgid ""
+"Füllen Sie die drei Schritte aus. Hier erscheint Ihr unverbindlicher "
+"Preisrahmen."
+msgstr ""
+"Füllen Sie die drei Schritte aus. Hier erscheint Ihr unverbindlicher "
+"Preisrahmen."
+
+msgid "Strecke A → B"
+msgstr "Strecke A → B"
+
+msgid "Team"
+msgstr "Team"
+
+msgid "Geschätztes Volumen"
+msgstr "Geschätztes Volumen"
+
+msgid "Fahrten A → B"
+msgstr "Fahrten A → B"
+
+msgid "Geschätzte Dauer"
+msgstr "Geschätzte Dauer"
+
+msgid ""
+"Besondere Gegenstände oder lange Tragewege können den Preis erhöhen. Wir "
+"prüfen Ihre Angaben persönlich."
+msgstr ""
+"Besondere Gegenstände oder lange Tragewege können den Preis erhöhen. Wir "
+"prüfen Ihre Angaben persönlich."
+
+msgid "Mit diesen Angaben anfragen"
+msgstr "Mit diesen Angaben anfragen"
+
+msgid ""
+"Eine erste Orientierung, kein Festpreis. Grundlage sind die Stundensätze "
+"auf dieser Website und eine grobe Zeitschätzung."
+msgstr ""
+"Eine erste Orientierung, kein Festpreis. Grundlage sind die Stundensätze "
+"auf dieser Website und eine grobe Zeitschätzung."
+
+msgid "Was ist berücksichtigt?"
+msgstr "Was ist berücksichtigt?"
+
+msgid ""
+"Tragen, Be- und Entladen sowie die Fahrt zwischen A und B. Etagen, "
+"Aufzüge und Tragewege beeinflussen die geschätzte Arbeitszeit."
+msgstr ""
+"Tragen, Be- und Entladen sowie die Fahrt zwischen A und B. Etagen, "
+"Aufzüge und Tragewege beeinflussen die geschätzte Arbeitszeit."
+
+msgid ""
+"Modellannahmen: ca. 14 m³ pro Fahrt und durchschnittlich 50 km/h. Volumen"
+" und Zeit können je nach Möbeln, Gewicht und Verkehr abweichen."
+msgstr ""
+"Modellannahmen: ca. 14 m³ pro Fahrt und durchschnittlich 50 km/h. Volumen"
+" und Zeit können je nach Möbeln, Gewicht und Verkehr abweichen."
+
+msgid ""
+"An- und Abfahrt zum Betrieb, Parkgebühren, Verpackung und Möbelmontage "
+"sind nicht enthalten und werden separat vereinbart."
+msgstr ""
+"An- und Abfahrt zum Betrieb, Parkgebühren, Verpackung und Möbelmontage "
+"sind nicht enthalten und werden separat vereinbart."
+
+msgid ""
+"Bei 30 m oder mehr wird zunächst mit 30 m gerechnet. Bitte längere Wege "
+"im Freitext angeben."
+msgstr ""
+"Bei 30 m oder mehr wird zunächst mit 30 m gerechnet. Bitte längere Wege "
+"im Freitext angeben."
+
+msgid "Angaben geändert. Bitte neu berechnen."
+msgstr "Angaben geändert. Bitte neu berechnen."
+
+msgid "Wird berechnet…"
+msgstr "Wird berechnet…"
+
+msgid "Bitte prüfen Sie die markierten Angaben."
+msgstr "Bitte prüfen Sie die markierten Angaben."
+
+msgid "Bitte mindestens ein Möbelstück oder einen Karton eintragen."
+msgstr "Bitte mindestens ein Möbelstück oder einen Karton eintragen."
+
+msgid ""
+"Die Berechnung ist gerade nicht verfügbar. Bitte versuchen Sie es erneut "
+"oder rufen Sie uns an."
+msgstr ""
+"Die Berechnung ist gerade nicht verfügbar. Bitte versuchen Sie es erneut "
+"oder rufen Sie uns an."
+
+msgid "Bitte laden Sie die Seite neu und versuchen Sie es erneut."
+msgstr "Bitte laden Sie die Seite neu und versuchen Sie es erneut."
+
+msgid "Zu viele Anfragen. Bitte versuchen Sie es später erneut."
+msgstr "Zu viele Anfragen. Bitte versuchen Sie es später erneut."
+
+msgid ""
+"Unverbindlicher Preisrahmen. Den endgültigen Preis bestätigen wir nach "
+"Prüfung Ihrer Angaben."
+msgstr ""
+"Unverbindlicher Preisrahmen. Den endgültigen Preis bestätigen wir nach "
+"Prüfung Ihrer Angaben."
+
+msgid ""
+"Für einen Transporter mit Fahrer ohne Tragehilfe erstellen wir Ihnen ein "
+"individuelles Angebot."
+msgstr ""
+"Für einen Transporter mit Fahrer ohne Tragehilfe erstellen wir Ihnen ein "
+"individuelles Angebot."
+
+msgid "Zimmer"
+msgstr "Zimmer"
+
+msgid ""
+"Ihre Umzugsdaten sind der Anfrage beigefügt. Ergänzen Sie jetzt Ihre "
+"Kontaktdaten."
+msgstr ""
+"Ihre Umzugsdaten sind der Anfrage beigefügt. Ergänzen Sie jetzt Ihre "
+"Kontaktdaten."
+
+msgid "Fahrer ohne Tragehilfe"
+msgstr "Fahrer ohne Tragehilfe"
+
+msgid "1 Umzugshelfer"
+msgstr "1 Umzugshelfer"
+
+msgid "2 Umzugshelfer"
+msgstr "2 Umzugshelfer"
+
+msgid ""
+"Mit Umzugshelfern: Tragen, Be- und Entladen sowie die Fahrt zwischen A "
+"und B. Etagen, Aufzüge und Tragewege beeinflussen die geschätzte "
+"Arbeitszeit."
+msgstr ""
+"Mit Umzugshelfern: Tragen, Be- und Entladen sowie die Fahrt zwischen A "
+"und B. Etagen, Aufzüge und Tragewege beeinflussen die geschätzte "
+"Arbeitszeit."

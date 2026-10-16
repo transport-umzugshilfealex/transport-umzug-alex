@@ -1,114 +1,554 @@
 msgid ""
-msgstr "Заявка"
-
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-12 09:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
 
 msgid "Вы звоните или пишете..."
 msgstr "Вы звоните или пишете — адреса, объём, лифт/этаж, дата и пожелания."
 
-
 msgid "Смета и подтверждение"
 msgstr "Смета и подтверждение"
-
 
 msgid "Предлагаем слот..."
 msgstr "Предлагаем удобный слот, цену и состав бригады. Всё прозрачно."
 
-
 msgid "Переезд"
 msgstr "Переезд"
-
 
 msgid "Приезжаем вовремя..."
 msgstr "Приезжаем вовремя, аккуратно пакуем, грузим, везём и ставим по местам."
 
-
 msgid "Ориентировочные тарифы"
 msgstr "Ориентировочные тарифы"
-
 
 msgid "Ниже — примеры. Точный расчёт..."
 msgstr "Ниже — примеры. Точный расчёт зависит от объёма и расстояния."
 
-
 msgid "Мини-переезд"
 msgstr "Мини-переезд"
-
 
 msgid "Фургон до 3,5 т + 1-2 грузчика"
 msgstr "Фургон до 3,5 т + 1-2 грузчика"
 
-
 msgid "от 49–69 € / час"
 msgstr "от 49–69 € / час"
-
 
 msgid "Стандарт"
 msgstr "Стандарт"
 
-
 msgid "Фургон + дополнительные грузчики, а также монтаж мебели по договорённости"
 msgstr "Фургон + дополнительные грузчики, а также монтаж мебели по договорённости"
-
 
 msgid "от 80–100 € / час"
 msgstr "от 80–100 € / час"
 
-
 msgid "Межгород"
 msgstr "Межгород"
-
 
 msgid "Фикс по маршруту..."
 msgstr "Фикс по маршруту, ночные окна"
 
-
 msgid "по запросу"
 msgstr "по запросу"
-
 
 msgid "Связаться с нами"
 msgstr "Связаться с нами"
 
-
 msgid "Имя"
 msgstr "Имя"
 
-
 msgid "Телефон"
 msgstr "Телефон"
-
 
 msgid "Сообщение"
 msgstr "Сообщение"
 
-
 msgid "Отправить заявку"
 msgstr "Отправить заявку"
-
 
 msgid "Позвонить сейчас"
 msgstr "Позвонить сейчас"
 
-
 msgid "Контактная информация"
 msgstr "Контактная информация"
-
-
-msgid "Телефон"
-msgstr "Телефон"
-
 
 msgid "Работаем: Пн–Сб, 8:00–20:00 (возможны ночные окна по договорённости)."
 msgstr "Работаем: Пн–Сб, 8:00–20:00 (возможны ночные окна по договорённости)."
 
-
-msgid "Мы храним только необходимую информацию, отправленную через форму, и не передаём её третьим лицам, если это не требуется законом."
-msgstr "Мы храним только необходимую информацию, отправленную через форму, и не передаём её третьим лицам, если это не требуется законом."
-
+msgid ""
+"Мы храним только необходимую информацию, отправленную через форму, и не "
+"передаём её третьим лицам, если это не требуется законом."
+msgstr ""
+"Мы храним только необходимую информацию, отправленную через форму, и не "
+"передаём её третьим лицам, если это не требуется законом."
 
 msgid "Schnell, sicher, zuverlässig"
-msgstr "Schnell, sicher, zuverlässig"
-
+msgstr "Быстро, безопасно, надёжно"
 
 msgid "🚚 Schnell, sicher, zuverlässig – und immer gerne für Sie da!"
 msgstr "🚚 Schnell, sicher, zuverlässig – und immer gerne для Вас!"
+
+msgid "Schnell, sicher, zuverlässig – und immer gerne für Sie da!"
+msgstr "Быстро, безопасно, надёжно — всегда рады помочь!"
+
+msgid ""
+"Entrümpelung, Umzüge, Möbeltransport. Schnell, sicher, zuverlässig — и "
+"всегда рады помочь."
+msgstr ""
+"Расчистка помещений, переезды, перевозка мебели. Быстро, безопасно, "
+"надёжно — всегда рады помочь."
+
+msgid "Anrufen"
+msgstr "Позвонить"
+
+msgid "Telefonkontakt"
+msgstr "Связаться по телефону"
+
+msgid "Menü"
+msgstr "Меню"
+
+msgid "Hauptnavigation"
+msgstr "Основная навигация"
+
+msgid "Sprache wählen"
+msgstr "Выбрать язык"
+
+msgid "Farbschema wechseln"
+msgstr "Переключить тему"
+
+msgid "Datenschutzeinstellungen"
+msgstr "Настройки конфиденциальности"
+
+msgid ""
+"Wir verwenden optionale Analyse-Cookies von Google Analytics, um die "
+"Nutzung unserer Website zu verstehen. Sie können zustimmen oder ablehnen."
+msgstr ""
+"Мы используем необязательные аналитические файлы cookie Google Analytics,"
+" чтобы понимать, как используется сайт. Вы можете согласиться или "
+"отказаться."
+
+msgid "Mehr erfahren"
+msgstr "Подробнее"
+
+msgid "Alle akzeptieren"
+msgstr "Принять все"
+
+msgid "Ablehnen"
+msgstr "Отклонить"
+
+msgid "Impressum"
+msgstr "Реквизиты"
+
+msgid "Datenschutz"
+msgstr "Конфиденциальность"
+
+msgid "Cookie-Einstellungen"
+msgstr "Настройки cookie"
+
+msgid "Bremen und ganz Deutschland"
+msgstr "Бремен и вся Германия"
+
+msgid "Deutschland"
+msgstr "Германия"
+
+msgid "Karte: Bremen-Nord, Deutschland"
+msgstr "Карта: Бремен-Норд, Германия"
+
+msgid "E-Mail (optional)"
+msgstr "Email (необязательно)"
+
+msgid "Vergrößern"
+msgstr "Приблизить"
+
+msgid "Verkleinern"
+msgstr "Отдалить"
+
+msgid "OpenStreetMap-Mitwirkende"
+msgstr "Участники OpenStreetMap"
+
+msgid "Preisrechner"
+msgstr "Калькулятор"
+
+msgid "Umzugskosten berechnen"
+msgstr "Рассчитать переезд"
+
+msgid "Umzugsdaten entfernen"
+msgstr "Убрать данные переезда"
+
+msgid "Ihr Umzug. Ihr Überblick."
+msgstr "Ваш переезд. Всё наглядно."
+
+msgid "Was kostet Ihr Umzug?"
+msgstr "Сколько будет стоить переезд?"
+
+msgid ""
+"In drei Schritten zu einer ersten Preisorientierung. Kostenlos und "
+"unverbindlich."
+msgstr "Предварительная стоимость за три шага. Бесплатно и без обязательств."
+
+msgid "Ohne Kontaktdaten berechnen"
+msgstr "Без ввода контактных данных"
+
+msgid ""
+"Bitte aktivieren Sie JavaScript für den Rechner oder kontaktieren Sie uns"
+" direkt."
+msgstr "Включите JavaScript для калькулятора или свяжитесь с нами напрямую."
+
+msgid "Schritte im Preisrechner"
+msgstr "Шаги расчёта"
+
+msgid "Strecke"
+msgstr "Маршрут"
+
+msgid "Wohnung"
+msgstr "Квартира"
+
+msgid "Team & Möbel"
+msgstr "Команда и вещи"
+
+msgid "Von A nach B"
+msgstr "Из точки А в точку Б"
+
+msgid "Tragen Sie die Fahrstrecke in Kilometern ein. Die Orte sind optional."
+msgstr ""
+"Укажите расстояние по дороге в километрах. Населённые пункты — "
+"необязательно."
+
+msgid "Auszugsort"
+msgstr "Откуда переезжаете"
+
+msgid "Einzugsort"
+msgstr "Куда переезжаете"
+
+msgid "z. B. Bremen"
+msgstr "Например, Бремен"
+
+msgid "z. B. Hamburg"
+msgstr "Например, Гамбург"
+
+msgid "Entfernung von A nach B"
+msgstr "Расстояние от А до Б"
+
+msgid ""
+"Bitte die Straßenentfernung angeben, nicht die Luftlinie. Bei mehreren "
+"Fahrten berücksichtigt der Rechner die Rückwege zwischen A und B."
+msgstr ""
+"Укажите расстояние по дороге, не по прямой. Если потребуется несколько "
+"рейсов, калькулятор учтёт обратные поездки между А и Б."
+
+msgid ""
+"Ob um die Ecke oder quer durch Deutschland: Wir planen mit Ihnen den "
+"passenden Transport."
+msgstr ""
+"В соседний дом или в другой город Германии — поможем спланировать "
+"перевозку."
+
+msgid "Wie wohnen Sie?"
+msgstr "Расскажите о квартире"
+
+msgid "Die Angaben beziehen sich auf die Wohnung, aus der Sie ausziehen."
+msgstr "Укажите параметры квартиры, из которой вы переезжаете."
+
+msgid "Anzahl der Zimmer"
+msgstr "Количество комнат"
+
+msgid "Wohnfläche"
+msgstr "Площадь квартиры"
+
+msgid "Wie voll ist die Wohnung?"
+msgstr "Заполненность квартиры"
+
+msgid "Wenig"
+msgstr "Малая"
+
+msgid "Mittel"
+msgstr "Средняя"
+
+msgid "Viel"
+msgstr "Большая"
+
+msgid "Beim Auszug"
+msgstr "При загрузке"
+
+msgid "Beim Einzug"
+msgstr "При разгрузке"
+
+msgid "Etage"
+msgstr "Этаж"
+
+msgid "Erdgeschoss"
+msgstr "Нижний этаж, без лестницы"
+
+msgid "Aufzug für die Möbel nutzbar?"
+msgstr "Мебель помещается в лифт?"
+
+msgid "Ohne Aufzug"
+msgstr "Без лифта"
+
+msgid "Mit Aufzug"
+msgstr "С лифтом"
+
+msgid "Trageweg vom Eingang zum Fahrzeug"
+msgstr "Расстояние от подъезда до машины"
+
+msgid "Bis 10 m"
+msgstr "До 10 м"
+
+msgid "Bis 20 m"
+msgstr "До 20 м"
+
+msgid "30 m oder mehr"
+msgstr "30 м и более"
+
+msgid "Das passende Team für Sie"
+msgstr "Выберите подходящую команду"
+
+msgid "Transporter mit Fahrer"
+msgstr "Авто с водителем"
+
+msgid "Sie übernehmen das Be- und Entladen."
+msgstr "Вы самостоятельно загружаете и разгружаете автомобиль."
+
+msgid "Sprinter + 1 Umzugshelfer"
+msgstr "Спринтер + 1 грузчик"
+
+msgid "Der Fahrer hilft beim Tragen und Laden."
+msgstr "Водитель также выполняет работу грузчика."
+
+msgid "Sprinter + 2 Umzugshelfer"
+msgstr "Спринтер + 2 грузчика"
+
+msgid "Zwei Helfer packen an. Einer davon fährt."
+msgstr "Два грузчика, один из которых — водитель."
+
+msgid "Auf Anfrage"
+msgstr "По запросу"
+
+msgid "Std."
+msgstr "ч"
+
+msgid "Genauer mit Ihrer Möbelliste"
+msgstr "Точнее — со списком вещей"
+
+msgid ""
+"Optional: Erfassen Sie die Möbel und Kartons, die tatsächlich mitkommen. "
+"Die Liste ersetzt die Schätzung nach Wohnfläche."
+msgstr ""
+"Необязательно: укажите мебель и коробки, которые нужно перевезти. Список "
+"заменит оценку объёма по площади квартиры."
+
+msgid "Nach Wohnungsgröße"
+msgstr "По размеру квартиры"
+
+msgid "Mit Möbelliste"
+msgstr "По списку вещей"
+
+msgid "Umzugskartons"
+msgstr "Картонные коробки"
+
+msgid "Sofa"
+msgstr "Диван"
+
+msgid "Sessel"
+msgstr "Кресло"
+
+msgid "Bett mit Matratze"
+msgstr "Кровать с матрасом"
+
+msgid "Kleiderschrank"
+msgstr "Платяной шкаф"
+
+msgid "Kommode"
+msgstr "Комод"
+
+msgid "Tisch"
+msgstr "Стол"
+
+msgid "Stuhl"
+msgstr "Стул"
+
+msgid "Schreibtisch"
+msgstr "Письменный стол"
+
+msgid "Regal"
+msgstr "Стеллаж"
+
+msgid "Waschmaschine"
+msgstr "Стиральная машина"
+
+msgid "Kühlschrank"
+msgstr "Холодильник"
+
+msgid "Weniger"
+msgstr "Уменьшить"
+
+msgid "Mehr"
+msgstr "Увеличить"
+
+msgid "Weitere Gegenstände oder Besonderheiten"
+msgstr "Другие предметы и особенности"
+
+msgid "z. B. Klavier, sehr schwere Möbel, Montage oder ein längerer Trageweg"
+msgstr "Например: пианино, тяжёлая мебель, сборка или большой путь до машины"
+
+msgid ""
+"Diese Angaben prüfen wir persönlich; sie werden nicht automatisch "
+"eingepreist."
+msgstr "Эти детали мы оценим лично; они не включаются в цену автоматически."
+
+msgid "Zurück"
+msgstr "Назад"
+
+msgid "Weiter"
+msgstr "Далее"
+
+msgid "Preisrahmen berechnen"
+msgstr "Рассчитать стоимость"
+
+msgid "Gut geplant umziehen"
+msgstr "Переезд с понятным планом"
+
+msgid "Ihre Preisorientierung"
+msgstr "Предварительная стоимость"
+
+msgid ""
+"Füllen Sie die drei Schritte aus. Hier erscheint Ihr unverbindlicher "
+"Preisrahmen."
+msgstr "Заполните три шага — здесь появится ориентировочный диапазон цены."
+
+msgid "Strecke A → B"
+msgstr "Маршрут А → Б"
+
+msgid "Team"
+msgstr "Команда"
+
+msgid "Geschätztes Volumen"
+msgstr "Примерный объём"
+
+msgid "Fahrten A → B"
+msgstr "Рейсы А → Б"
+
+msgid "Geschätzte Dauer"
+msgstr "Примерное время"
+
+msgid ""
+"Besondere Gegenstände oder lange Tragewege können den Preis erhöhen. Wir "
+"prüfen Ihre Angaben persönlich."
+msgstr ""
+"Особые предметы и большое расстояние до машины могут увеличить цену. Мы "
+"уточним детали лично."
+
+msgid "Mit diesen Angaben anfragen"
+msgstr "Отправить заявку с этими данными"
+
+msgid ""
+"Eine erste Orientierung, kein Festpreis. Grundlage sind die Stundensätze "
+"auf dieser Website und eine grobe Zeitschätzung."
+msgstr ""
+"Предварительная оценка, не фиксированная цена. Расчёт основан на "
+"почасовых ставках сайта и приблизительном времени работ."
+
+msgid "Was ist berücksichtigt?"
+msgstr "Что учтено в расчёте?"
+
+msgid ""
+"Tragen, Be- und Entladen sowie die Fahrt zwischen A und B. Etagen, "
+"Aufzüge und Tragewege beeinflussen die geschätzte Arbeitszeit."
+msgstr ""
+"Перенос, погрузка, разгрузка и поездка между А и Б. Этажи, лифт и "
+"расстояние до машины влияют на оценку рабочего времени."
+
+msgid ""
+"Modellannahmen: ca. 14 m³ pro Fahrt und durchschnittlich 50 km/h. Volumen"
+" und Zeit können je nach Möbeln, Gewicht und Verkehr abweichen."
+msgstr ""
+"Допущения модели: около 14 м³ за рейс и средняя скорость 50 км/ч. Объём и"
+" время могут меняться в зависимости от мебели, веса и дорожной ситуации."
+
+msgid ""
+"An- und Abfahrt zum Betrieb, Parkgebühren, Verpackung und Möbelmontage "
+"sind nicht enthalten und werden separat vereinbart."
+msgstr ""
+"Выезд с базы и возврат, платная парковка, упаковка и сборка мебели не "
+"включены и согласуются отдельно."
+
+msgid ""
+"Bei 30 m oder mehr wird zunächst mit 30 m gerechnet. Bitte längere Wege "
+"im Freitext angeben."
+msgstr ""
+"Для «30 м и более» предварительно учитывается 30 м. Если путь длиннее, "
+"укажите это в примечании."
+
+msgid "Angaben geändert. Bitte neu berechnen."
+msgstr "Данные изменились. Рассчитайте стоимость заново."
+
+msgid "Wird berechnet…"
+msgstr "Рассчитываем…"
+
+msgid "Bitte prüfen Sie die markierten Angaben."
+msgstr "Проверьте отмеченные поля."
+
+msgid "Bitte mindestens ein Möbelstück oder einen Karton eintragen."
+msgstr "Добавьте хотя бы один предмет мебели или коробку."
+
+msgid ""
+"Die Berechnung ist gerade nicht verfügbar. Bitte versuchen Sie es erneut "
+"oder rufen Sie uns an."
+msgstr "Сейчас расчёт недоступен. Попробуйте ещё раз или позвоните нам."
+
+msgid "Bitte laden Sie die Seite neu und versuchen Sie es erneut."
+msgstr "Обновите страницу и попробуйте снова."
+
+msgid "Zu viele Anfragen. Bitte versuchen Sie es später erneut."
+msgstr "Слишком много запросов. Попробуйте позже."
+
+msgid ""
+"Unverbindlicher Preisrahmen. Den endgültigen Preis bestätigen wir nach "
+"Prüfung Ihrer Angaben."
+msgstr ""
+"Ориентировочный диапазон. Окончательную цену подтвердим после уточнения "
+"деталей."
+
+msgid ""
+"Für einen Transporter mit Fahrer ohne Tragehilfe erstellen wir Ihnen ein "
+"individuelles Angebot."
+msgstr ""
+"Для автомобиля с водителем без помощи в погрузке подготовим "
+"индивидуальное предложение."
+
+msgid "Zimmer"
+msgstr "комн."
+
+msgid ""
+"Ihre Umzugsdaten sind der Anfrage beigefügt. Ergänzen Sie jetzt Ihre "
+"Kontaktdaten."
+msgstr "Данные переезда приложены к заявке. Осталось заполнить контакты."
+
+msgid "Fahrer ohne Tragehilfe"
+msgstr "Только водитель"
+
+msgid "1 Umzugshelfer"
+msgstr "1 грузчик"
+
+msgid "2 Umzugshelfer"
+msgstr "2 грузчика"
+
+msgid ""
+"Mit Umzugshelfern: Tragen, Be- und Entladen sowie die Fahrt zwischen A "
+"und B. Etagen, Aufzüge und Tragewege beeinflussen die geschätzte "
+"Arbeitszeit."
+msgstr ""
+"В вариантах с грузчиками: перенос, погрузка, разгрузка и поездка между А "
+"и Б. Этажи, лифт и расстояние до машины влияют на оценку рабочего "
+"времени."

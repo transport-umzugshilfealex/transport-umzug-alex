@@ -2,19 +2,6 @@
 <html lang="{{ get_locale() }}">
 <head>
 
-<script>
-  // Beim ersten Besuch Deutsch verwenden. Eine bewusste Sprachauswahl bleibt erhalten.
-  (() => {
-    try {
-      const selected = localStorage.getItem('site-language-selected');
-      const current = document.documentElement.lang.toLowerCase().split('-')[0];
-      if (!selected && current !== 'de') {
-        window.location.replace("{{ url_for('set_lang', lang='de') }}");
-      }
-    } catch (_) {}
-  })();
-</script>
-
 <!-- Google Consent Mode: standardmäßig keine Analyse -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -37,6 +24,7 @@
   <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style"/>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='leaflet/leaflet.css') }}">
+  {% block extra_styles %}{% endblock %}
 
 </head>
 <body>
@@ -44,36 +32,36 @@
   <div class="container nav">
     <div class="brand">
       <a class="logo" href="{{ url_for('index') }}" aria-label="Transport & Umzugshilfe Alex">
-  <img src="{{ url_for('static', filename='img/logo.PNG') }}" alt="Transport & Umzugshilfe Alex" width="42" height="42" loading="eager" decoding="async">
+  <img src="{{ url_for('static', filename='img/logo-small.png') }}" alt="Transport & Umzugshilfe Alex" width="42" height="42" loading="eager" decoding="async">
 </a>
 
       <span class="brand-copy">
         <a class="brand-name" href="{{ url_for('index') }}"><strong>Transport & Umzugshilfe Alex</strong></a>
-        <a class="brand-phone-mobile" href="tel:+491757412613" aria-label="Anrufen: +49 175 7412613">☎ +49 175 7412613</a>
+        <a class="brand-phone-mobile" href="tel:+491757412613" aria-label="{{ _('Anrufen') }}: +49 175 7412613">☎ +49 175 7412613</a>
       </span>
     </div>
 
-    <div class="header-contact" aria-label="Telefonkontakt">
-      <a class="header-phone" href="tel:+491757412613" aria-label="Anrufen: +49 175 7412613">
+    <div class="header-contact" aria-label="{{ _('Telefonkontakt') }}">
+      <a class="header-phone" href="tel:+491757412613" aria-label="{{ _('Anrufen') }}: +49 175 7412613">
         <span aria-hidden="true">☎</span><span>+49 175 7412613</span>
       </a>
     </div>
 
     <!-- Бургер-кнопка (мобайл) -->
-    <button class="hamb" id="menuToggle" aria-label="Меню" aria-expanded="false" aria-controls="mainmenu">
+    <button class="hamb" id="menuToggle" aria-label="{{ _('Menü') }}" aria-expanded="false" aria-controls="mainmenu">
       <span></span><span></span><span></span>
     </button>
 
     <!-- Только навигация -->
-    <nav class="menu" id="mainmenu" aria-label="main">
+    <nav class="menu" id="mainmenu" aria-label="{{ _('Hauptnavigation') }}">
       <a href="{{ url_for('index') }}#leistungen">{{ _('Услуги') }}</a>
       <a href="{{ url_for('index') }}#vorteile">{{ _('Преимущества') }}</a>
       <a href="{{ url_for('index') }}#ablauf">{{ _('Как работаем') }}</a>
-      <a href="{{ url_for('index') }}#preise">{{ _('Цены') }}</a>
+      <a class="calculator-nav-link" href="{{ url_for('index') }}#rechner">{{ _('Preisrechner') }}</a>
       <a href="{{ url_for('index') }}#kontakt">{{ _('Контакты') }}</a>
       <div class="mobile-header-tools">
         <a class="mobile-phone" href="tel:+491757412613">☎ +49 175 7412613</a>
-        <div class="language-switcher" aria-label="Sprache wählen">
+        <div class="language-switcher" aria-label="{{ _('Sprache wählen') }}">
           <a data-lang="de" class="{{ 'active' if get_locale() == 'de' else '' }}" href="{{ url_for('set_lang', lang='de') }}" {% if get_locale() == 'de' %}aria-current="page"{% endif %}>DE</a>
           <a data-lang="ru" class="{{ 'active' if get_locale() == 'ru' else '' }}" href="{{ url_for('set_lang', lang='ru') }}" {% if get_locale() == 'ru' %}aria-current="page"{% endif %}>RU</a>
           <a data-lang="en" class="{{ 'active' if get_locale() == 'en' else '' }}" href="{{ url_for('set_lang', lang='en') }}" {% if get_locale() == 'en' %}aria-current="page"{% endif %}>EN</a>
@@ -83,12 +71,12 @@
 
     <!-- Язык и тема (десктоп) -->
     <div class="tools">
-      <div class="language-switcher desktop-language" aria-label="Sprache wählen">
+      <div class="language-switcher desktop-language" aria-label="{{ _('Sprache wählen') }}">
         <a data-lang="de" class="{{ 'active' if get_locale() == 'de' else '' }}" href="{{ url_for('set_lang', lang='de') }}" {% if get_locale() == 'de' %}aria-current="page"{% endif %}>DE</a>
         <a data-lang="ru" class="{{ 'active' if get_locale() == 'ru' else '' }}" href="{{ url_for('set_lang', lang='ru') }}" {% if get_locale() == 'ru' %}aria-current="page"{% endif %}>RU</a>
         <a data-lang="en" class="{{ 'active' if get_locale() == 'en' else '' }}" href="{{ url_for('set_lang', lang='en') }}" {% if get_locale() == 'en' %}aria-current="page"{% endif %}>EN</a>
       </div>
-      <button class="theme" id="themeToggle" aria-label="Theme">🌙</button>
+      <button class="theme" id="themeToggle" aria-label="{{ _('Farbschema wechseln') }}">🌙</button>
     </div>
   </div>
 </header>
@@ -100,26 +88,27 @@
 <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
   <div class="cookie-banner__content">
     <div class="cookie-banner__text">
-      <h2 id="cookieTitle">Datenschutzeinstellungen</h2>
-      <p id="cookieText">Wir verwenden optionale Analyse-Cookies von Google Analytics, um die Nutzung unserer Website zu verstehen. Sie können zustimmen oder ablehnen.</p>
-      <a id="cookiePrivacyLink" href="{{ url_for('privacy') }}">Mehr erfahren</a>
+      <h2 id="cookieTitle">{{ _('Datenschutzeinstellungen') }}</h2>
+      <p id="cookieText">{{ _('Wir verwenden optionale Analyse-Cookies von Google Analytics, um die Nutzung unserer Website zu verstehen. Sie können zustimmen oder ablehnen.') }}</p>
+      <a id="cookiePrivacyLink" href="{{ url_for('privacy') }}">{{ _('Mehr erfahren') }}</a>
     </div>
     <div class="cookie-banner__actions">
-      <button class="cookie-btn cookie-btn--accept" id="cookieAccept" type="button">Alle akzeptieren</button>
-      <button class="cookie-btn cookie-btn--reject" id="cookieReject" type="button">Ablehnen</button>
+      <button class="cookie-btn cookie-btn--accept" id="cookieAccept" type="button">{{ _('Alle akzeptieren') }}</button>
+      <button class="cookie-btn cookie-btn--reject" id="cookieReject" type="button">{{ _('Ablehnen') }}</button>
     </div>
   </div>
 </section>
 
 <footer class="footer container">
   <div>© {{ year if year is defined else now().year }} Transport & Umzugshilfe Alex ·
-    <a href="{{ url_for('impressum') }}">Impressum</a> ·
-    <a href="{{ url_for('privacy') }}">Datenschutz</a> ·
-    <button class="cookie-settings-link" id="cookieSettings" type="button">Cookie-Einstellungen</button>
+    <a href="{{ url_for('impressum') }}">{{ _('Impressum') }}</a> ·
+    <a href="{{ url_for('privacy') }}">{{ _('Datenschutz') }}</a> ·
+    <button class="cookie-settings-link" id="cookieSettings" type="button">{{ _('Cookie-Einstellungen') }}</button>
   </div>
 </footer>
 <script src="{{ url_for('static', filename='leaflet/leaflet.js') }}" defer></script>
 
 <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+{% block extra_scripts %}{% endblock %}
 </body>
 </html>

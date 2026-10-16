@@ -1,22 +1,27 @@
 from __future__ import annotations
 
 import os
+import json
 import smtplib
+import ssl
+from urllib.parse import urlsplit
 from email.message import EmailMessage
 from datetime import datetime
 
 from dotenv import load_dotenv
 from flask import (
-    Flask, render_template, request, redirect, url_for, session, make_response, current_app
+    Flask, render_template, request, redirect, url_for, session, current_app
 )
 from flask_babel import Babel, _, get_locale
 from flask_wtf import FlaskForm, CSRFProtect
-from flask_wtf.csrf import generate_csrf
+from flask_wtf.csrf import generate_csrf, CSRFError
 from wtforms import StringField, TextAreaField, SubmitField
-from wtforms.validators import DataRequired, Email, Length
+from wtforms.validators import DataRequired, Email, Length, Optional, Regexp
+from werkzeug.exceptions import TooManyRequests
 from werkzeug.middleware.proxy_fix import ProxyFix
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from calculator import SERVICES, ITEMS, HOURLY_RATES, CalculatorError, validate as validate_calculator, estimate, email_summary
 
 
 load_dotenv()  # подхватит .env из корня проекта
@@ -26,11 +31,14 @@ def create_app() -> Flask:
     app = Flask(__name__, instance_relative_config=True)
 
     # ── Конфигурация (prod/dev из config.py)
-    if os.getenv("FLASK_ENV") == "production":
+    if os.getenv("RENDER") == "true" or os.getenv("FLASK_ENV") == "production":
         from config import ProdConfig as AppConfig
     else:
         from config import DevConfig as AppConfig
     app.config.from_object(AppConfig)
+    app.json.ensure_ascii = False
+    if not app.debug and app.config["SECRET_KEY"] in (None, "", "dev-key", "change-me"):
+        raise RuntimeError("Set a private SECRET_KEY environment variable in production")
 
     # Запасные значения (если забыли в config.py)
     app.config.setdefault("BABEL_DEFAULT_LOCALE", "de")
@@ -41,14 +49,28 @@ def create_app() -> Flask:
     limiter = Limiter(get_remote_address, app=app, default_limits=["200 per hour"])
     CSRFProtect(app)
 
+    @app.errorhandler(CSRFError)
+    def csrf_error(error):
+        if request.endpoint in ("contact", "calculate"):
+            return {"ok": False, "errors": {"csrf_token": ["Please reload the page and try again."]}}, 400
+        return error.get_response()
+
+    @app.errorhandler(TooManyRequests)
+    def rate_limit_error(error):
+        if request.endpoint in ("contact", "calculate"):
+            response = app.json.response({"ok": False, "errors": {"rate_limit": ["Too many requests. Please try again later."]}})
+            response.status_code = 429
+            return response
+        return error.get_response()
+
     # ── Выбор языка
     def select_locale():
-        if "lang" in session and session["lang"] in app.config["LANGUAGES"]:
-            return session["lang"]
         lang = request.args.get("lang")
         if lang in app.config["LANGUAGES"]:
             session["lang"] = lang
             return lang
+        if session.get("lang") in app.config["LANGUAGES"]:
+            return session["lang"]
         # Первый визит всегда открывается на немецком независимо от языка браузера.
         return app.config.get("BABEL_DEFAULT_LOCALE", "de")
 
@@ -99,19 +121,20 @@ def create_app() -> Flask:
     # ── Форма контакта
     class ContactForm(FlaskForm):
         name = StringField("name", validators=[DataRequired(), Length(max=80)])
-        phone = StringField("phone", validators=[DataRequired(), Length(max=32)])
-        email = StringField("email", validators=[Email(), Length(max=120)])
+        phone = StringField("phone", validators=[DataRequired(), Length(max=32), Regexp(r"(?=.*\d)[\d+\s()-]+\Z")])
+        email = StringField("email", filters=[lambda value: value.strip() if value else value], validators=[Optional(), Email(), Length(max=120)])
         message = TextAreaField("message", validators=[Length(max=2000)])
+        calculator_data = StringField("calculator_data", validators=[Optional(), Length(max=6000)])
         submit = SubmitField("send")
 
     # ── Отправка письма через SMTP (Gmail/App Password или другой провайдер)
     def send_email_smtp(name: str, phone: str, email: str | None, message: str | None) -> None:
         rcpt = os.getenv("MAIL_TO") or app.config.get("MAIL_TO")
         if not rcpt:
-            current_app.logger.warning("MAIL_TO is not set; skipping email send")
-            return
+            raise RuntimeError("MAIL_TO is not set")
 
-        subject = f"Neue Anfrage: Transport & Umzugshilfe Alex — {name}"
+        subject_name = " ".join(name.splitlines())
+        subject = f"Neue Anfrage: Transport & Umzugshilfe Alex — {subject_name}"
         body = (
             f"Name: {name}\n"
             f"Telefon: {phone}\n"
@@ -123,6 +146,8 @@ def create_app() -> Flask:
         msg["From"] = os.getenv("SMTP_USER", "no-reply@localhost")
         msg["To"] = rcpt
         msg["Subject"] = subject
+        if email:
+            msg["Reply-To"] = email
         msg.set_content(body)
 
         host = os.getenv("SMTP_HOST")
@@ -131,23 +156,42 @@ def create_app() -> Flask:
         pwd = os.getenv("SMTP_PASS")
 
         if not host:
-            current_app.logger.warning("SMTP_HOST not set; skipping email send")
-            return
+            raise RuntimeError("SMTP_HOST is not set")
 
-        with smtplib.SMTP(host, port, timeout=20) as s:
+        tls_context = ssl.create_default_context()
+        smtp_options = {"timeout": 20}
+        if port == 465:
+            smtp_options["context"] = tls_context
+        smtp_class = smtplib.SMTP_SSL if port == 465 else smtplib.SMTP
+        with smtp_class(host, port, **smtp_options) as s:
             s.ehlo()
             if port in (587, 25):
-                s.starttls()
+                s.starttls(context=tls_context)
+                s.ehlo()
             if user and pwd:
                 s.login(user, pwd)
-            s.send_message(msg)
+            refused = s.send_message(msg)
+            if refused:
+                raise smtplib.SMTPRecipientsRefused(refused)
 
     # ── Роуты
     @app.route("/")
     @limiter.limit("30 per minute")
     def index():
         year = datetime.now().year
-        return render_template("index.html", year=year)
+        return render_template("index.html", year=year, calculator_services=SERVICES,
+                               calculator_items=ITEMS, calculator_rates=HOURLY_RATES)
+
+    @app.post("/calculate")
+    @limiter.limit("30 per minute")
+    def calculate():
+        if request.content_length and request.content_length > 12000:
+            return {"ok": False, "errors": {"calculator": ["Request too large"]}}, 413
+        try:
+            data = validate_calculator(request.get_json(silent=True))
+        except CalculatorError as error:
+            return {"ok": False, "errors": {error.field: ["Please check this field"]}}, 400
+        return {"ok": True, "estimate": estimate(data)}
 
     @app.route("/impressum")
     def impressum():
@@ -161,7 +205,15 @@ def create_app() -> Flask:
     def set_lang(lang: str):
         if lang in app.config["LANGUAGES"]:
             session["lang"] = lang
-        return redirect(request.referrer or url_for("index"))
+        target = url_for("index")
+        if request.referrer:
+            referrer = urlsplit(request.referrer)
+            origin = urlsplit(request.host_url)
+            if (referrer.scheme, referrer.netloc) == (origin.scheme, origin.netloc):
+                path = referrer.path
+                if path.startswith("/") and not path.startswith("//") and "\\" not in path:
+                    target = path
+        return redirect(target)
 
     # ⚠️ ЕДИНСТВЕННЫЙ обработчик формы (старый дубликат удалён)
     @app.route("/contact", methods=["POST"])
@@ -169,12 +221,19 @@ def create_app() -> Flask:
     def contact():
         form = ContactForm()
         if form.validate_on_submit():
+            message = form.message.data.strip() if form.message.data else ""
+            if form.calculator_data.data:
+                try:
+                    calculation = validate_calculator(json.loads(form.calculator_data.data))
+                except (ValueError, TypeError):
+                    return {"ok": False, "errors": {"calculator_data": ["Please recalculate your move"]}}, 400
+                message += "\n\n" + email_summary(calculation)
             try:
                 send_email_smtp(
                     name=form.name.data.strip(),
                     phone=form.phone.data.strip(),
                     email=form.email.data.strip() if form.email.data else None,
-                    message=form.message.data.strip() if form.message.data else None,
+                    message=message or None,
                 )
             except Exception as e:
                 current_app.logger.exception("Email send failed: %s", e)
@@ -182,19 +241,9 @@ def create_app() -> Flask:
             return {"ok": True}, 200
         return {"ok": False, "errors": form.errors}, 400
 
-    # (опционально) Быстрый тест отправки письма
-    @app.get("/testmail")
-    def testmail():
-        try:
-            send_email_smtp("Test", "+49 000000", None, "Hello from Flask")
-            return "OK"
-        except Exception as e:
-            current_app.logger.exception("testmail error")
-            return f"ERROR: {e}", 500
-
     return app
 
 
 if __name__ == "__main__":
     app = create_app()
-    app.run(debug=True)
+    app.run()
