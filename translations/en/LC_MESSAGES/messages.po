@@ -695,3 +695,27 @@ msgid ""
 msgstr ""
 "With movers: carrying, loading, unloading and travel between A and B. "
 "Floors, lifts and carrying distances affect the estimated working time."
+
+msgid "Fernseher"
+msgstr "Television"
+
+msgid "Herd mit Backofen"
+msgstr "Cooker with oven"
+
+msgid "Geschirrspüler"
+msgstr "Dishwasher"
+
+msgid "Wäschetrockner"
+msgstr "Tumble dryer"
+
+msgid "Gefrierschrank"
+msgstr "Freezer"
+
+msgid "Backofen (einzeln)"
+msgstr "Separate oven"
+
+msgid "Mikrowelle"
+msgstr "Microwave"
+
+msgid "Staubsauger"
+msgstr "Vacuum cleaner"

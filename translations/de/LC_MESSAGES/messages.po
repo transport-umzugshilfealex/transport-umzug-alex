@@ -711,3 +711,27 @@ msgstr ""
 "Mit Umzugshelfern: Tragen, Be- und Entladen sowie die Fahrt zwischen A "
 "und B. Etagen, Aufzüge und Tragewege beeinflussen die geschätzte "
 "Arbeitszeit."
+
+msgid "Fernseher"
+msgstr "Fernseher"
+
+msgid "Herd mit Backofen"
+msgstr "Herd mit Backofen"
+
+msgid "Geschirrspüler"
+msgstr "Geschirrspüler"
+
+msgid "Wäschetrockner"
+msgstr "Wäschetrockner"
+
+msgid "Gefrierschrank"
+msgstr "Gefrierschrank"
+
+msgid "Backofen (einzeln)"
+msgstr "Backofen (einzeln)"
+
+msgid "Mikrowelle"
+msgstr "Mikrowelle"
+
+msgid "Staubsauger"
+msgstr "Staubsauger"

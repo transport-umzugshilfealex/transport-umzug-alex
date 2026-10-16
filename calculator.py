@@ -28,6 +28,14 @@ ITEMS = (
     ("shelf", "Regal", 0.6),
     ("washer", "Waschmaschine", 0.5),
     ("fridge", "Kühlschrank", 0.7),
+    ("tv", "Fernseher", 0.3),
+    ("stove", "Herd mit Backofen", 0.5),
+    ("dishwasher", "Geschirrspüler", 0.5),
+    ("dryer", "Wäschetrockner", 0.5),
+    ("freezer", "Gefrierschrank", 0.7),
+    ("oven", "Backofen (einzeln)", 0.2),
+    ("microwave", "Mikrowelle", 0.1),
+    ("vacuum", "Staubsauger", 0.15),
 )
 HOURLY_RATES = {"driver": None, "one": (60, 60), "two": (80, 100)}
 MODEL = {

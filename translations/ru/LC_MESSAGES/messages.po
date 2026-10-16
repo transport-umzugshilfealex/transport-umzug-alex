@@ -552,3 +552,27 @@ msgstr ""
 "В вариантах с грузчиками: перенос, погрузка, разгрузка и поездка между А "
 "и Б. Этажи, лифт и расстояние до машины влияют на оценку рабочего "
 "времени."
+
+msgid "Fernseher"
+msgstr "Телевизор"
+
+msgid "Herd mit Backofen"
+msgstr "Плита с духовкой"
+
+msgid "Geschirrspüler"
+msgstr "Посудомоечная машина"
+
+msgid "Wäschetrockner"
+msgstr "Сушильная машина"
+
+msgid "Gefrierschrank"
+msgstr "Морозильная камера"
+
+msgid "Backofen (einzeln)"
+msgstr "Отдельный духовой шкаф"
+
+msgid "Mikrowelle"
+msgstr "Микроволновая печь"
+
+msgid "Staubsauger"
+msgstr "Пылесос"

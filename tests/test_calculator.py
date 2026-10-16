@@ -135,6 +135,26 @@ class CalculatorEndpointTests(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertIn("csrf_token", response.json["errors"])
 
+    def test_appliances_are_translated_and_included_in_quote_and_email(self):
+        items = {"tv": 1, "stove": 1, "dishwasher": 1, "dryer": 1,
+                 "freezer": 1, "oven": 1, "microwave": 1, "vacuum": 1}
+        for lang, label in (("de", "Geschirrspüler"), ("en", "Dishwasher"), ("ru", "Посудомоечная машина")):
+            html = self.client.get("/", query_string={"lang": lang}).text
+            self.assertIn(label, html)
+            for key in items:
+                self.assertIn(f'id="calc-item-{key}"', html)
+        calculation = example(inventory_mode="items", items=items)
+        response = self.calculate(calculation)
+        self.assertEqual(response.status_code, 200)
+        result = response.json["estimate"]
+        self.assertEqual(result["volume_m3"], 2.95)
+        self.assertEqual(result["price_low"], result["hours_low"] * 60 * 1.25)
+        self.assertEqual(result["price_high"], result["hours_high"] * 60 * 1.25)
+        summary = email_summary(validate(calculation))
+        self.assertIn("Geschirrspüler: 1", summary)
+        self.assertIn("Fernseher: 1", summary)
+        self.assertIn("Herd mit Backofen: 1", summary)
+
     def test_invalid_json_and_input(self):
         for data in ([], None, {}, example(distance=-10)):
             with self.subTest(data=data):
